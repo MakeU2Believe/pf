@@ -1,10 +1,21 @@
+$row-1-height: 22vh;
+$row-2-height: 50px;
+$row-3-height: 1fr;
+$row-4-height: 50px;
+
+$col-1-width: 20vw;
+$col-2-width: 30vw;
+$col-3-width: 50vw;
+
+$padding-right: 40px;
+
 .root {
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-columns: 30vw 50vw;
-  grid-template-rows: 22vh 50px 1fr 50px;
-  padding: 0 40px 14px 290px;
+  grid-template-columns: $col-2-width $col-3-width;
+  grid-template-rows: $row-1-height $row-2-height $row-3-height $row-4-height;
+  padding: 0 $padding-right 0 $col-1-width;
   justify-items: center;
   align-items: center;
 }
@@ -28,9 +39,22 @@
   display: flex;
 }
 
+.contacts {
+  grid-area: 4 / 1 / 5 / 2;
+}
+
+.fonts {
+  grid-area: 4 / 2 / 5 / 3;
+}
+
 .projects {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   list-style: none;
-  padding: 0;
+  padding: calc($row-1-height + $row-2-height) 0 $row-4-height;
   margin: 0;
   height: 100%;
   width: 100%;
@@ -38,11 +62,17 @@
 }
 
 .project {
-  margin: 30px 0;
+  width: $col-3-width;
+  margin: 30px 0 30px auto;
   text-align: center;
 }
 
 .projectDescription {
   font-size: 16px;
   line-height: 1;
+}
+
+.interactive {
+  position: relative;
+  z-index: 1;
 }

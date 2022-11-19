@@ -10,14 +10,23 @@ export interface MainProps {
 export class Main extends React.Component<MainProps> {
   render() {
     return (
-      <main className={s.root}>
-        <h2 className={s.heading}>nick</h2>
-        <h2 className={s.heading}>deineko</h2>
+      <>
+        <main className={s.root}>
+          <h2 className={classNames(s.heading, s.interactive)}>nick</h2>
+          <h2 className={classNames(s.heading, s.interactive)}>deineko</h2>
 
-        <button className={s.button}>résumé</button>
-        <h2 className={s.subtitle}>art director, visual designer, tutor, car lover.</h2>
+          <button className={classNames(s.button, s.interactive)}>résumé</button>
+          <h2 className={classNames(s.subtitle, s.interactive)}>art director, visual designer, tutor, car lover.</h2>
 
-        <div className={s.thumbnail}></div>
+          <div className={s.thumbnail}></div>
+
+          <div className={classNames(s.fonts, s.interactive)}>
+            typefaces: rublena © ktf; mantonico © minttype
+          </div>
+          <div className={classNames(s.contacts, s.interactive)}>
+            <pre>+38 063 348 35 48   |   mykola.a.deineko@gmail.com</pre>
+          </div>
+        </main>
 
         <ul className={s.projects}>
           {projects.map(({title, description}) => {
@@ -29,13 +38,7 @@ export class Main extends React.Component<MainProps> {
             )
           })}
         </ul>
-        <div className={s.contacts}>
-          <pre>+38 063 348 35 48   |   mykola.a.deineko@gmail.com</pre>
-        </div>
-        <div className={s.fonts}>
-          typefaces: rublena © ktf; mantonico © minttype
-        </div>
-      </main>
+      </>
     );
   }
 }
