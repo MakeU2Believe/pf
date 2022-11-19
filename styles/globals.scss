@@ -1,0 +1,21 @@
+@import "./common.scss";
+
+@font-face {
+    font-family: 'mantonico';
+    src: url('../fonts/mantonico/mantonico-light-webfont.woff2') format('woff2'),
+    url('../fonts/mantonico/mantonico-light-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'rublena';
+    src: url('../fonts/rublena/ktfcompacttrial-solid-webfont.woff2') format('woff2'),
+    url('../fonts/rublena/ktfcompacttrial-solid-webfont.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+html {
+    @include mantonico();
+}

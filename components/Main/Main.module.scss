@@ -1,3 +1,5 @@
+@import "../../styles/common";
+
 $row-1-height: 22vh;
 $row-2-height: 50px;
 $row-3-height: 1fr;
@@ -31,6 +33,7 @@ $padding-right: 40px;
 }
 
 .heading {
+  @include rublena();
   line-height: 1;
   font-size: 10vw;
 }

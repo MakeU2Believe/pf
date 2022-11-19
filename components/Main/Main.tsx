@@ -24,7 +24,7 @@ export class Main extends React.Component<MainProps> {
             typefaces: rublena © ktf; mantonico © minttype
           </div>
           <div className={classNames(s.contacts, s.interactive)}>
-            <pre>+38 063 348 35 48   |   mykola.a.deineko@gmail.com</pre>
+            +38 063 348 35 48   |   mykola.a.deineko@gmail.com
           </div>
         </main>
 
