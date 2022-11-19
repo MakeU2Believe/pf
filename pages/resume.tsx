@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import {Main} from '../components';
 
-export default function Index() {
+export default function Resume() {
   return (
     <>
       <Head>

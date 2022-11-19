@@ -1,13 +1,26 @@
 import React from 'react';
 
 import s from './Main.module.scss';
-import {projects} from '../../data';
+import {Project, projects} from '../../data';
 import classNames from 'classnames';
+import Link from 'next/link';
 
 export interface MainProps {
 }
 
-export class Main extends React.Component<MainProps> {
+export interface MainState {
+  activeProject: Project | null;
+}
+
+export class Main extends React.Component<MainProps, MainState> {
+  state: MainState = {
+    activeProject: null,
+  }
+
+  private setActiveProject(project: Project | null) {
+    this.setState({activeProject: project});
+  }
+
   render() {
     return (
       <>
@@ -15,10 +28,17 @@ export class Main extends React.Component<MainProps> {
           <h2 className={classNames(s.heading, s.interactive)}>nick</h2>
           <h2 className={classNames(s.heading, s.interactive)}>deineko</h2>
 
-          <button className={classNames(s.button, s.interactive)}>résumé</button>
+          <Link href="/resume" className={classNames(s.button, s.interactive)}>
+            résumé
+          </Link>
+
           <h2 className={classNames(s.subtitle, s.interactive)}>art director, visual designer, tutor, car lover.</h2>
 
-          <div className={s.thumbnail}></div>
+          <div className={s.thumbnailContainer}>
+            {this.state.activeProject && (
+              <img src={this.state.activeProject.thumbnail} className={s.thumbnail}/>
+            )}
+          </div>
 
           <div className={classNames(s.fonts, s.interactive)}>
             typefaces: rublena © ktf; mantonico © minttype
@@ -29,9 +49,13 @@ export class Main extends React.Component<MainProps> {
         </main>
 
         <ul className={s.projects}>
-          {projects.map(({title, description}) => {
+          {projects.map((project) => {
+            const {title, description } = project;
+
             return (
-              <li className={s.project}>
+              <li className={s.project} key={title}
+                  onMouseEnter={() => this.setActiveProject(project)}
+                  onMouseLeave={() => console.log('=')}>
                 <button className={classNames(s.button, s.projectLabel)}>{title}</button>
                 <p className={s.projectDescription}>{description}</p>
               </li>

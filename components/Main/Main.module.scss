@@ -50,6 +50,19 @@ $padding-right: 40px;
   grid-area: 4 / 2 / 5 / 3;
 }
 
+.thumbnailContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  overflow: hidden;
+}
+
+.thumbnail {
+  max-width: 90%;
+  max-height: 90%;
+}
+
 .projects {
   position: fixed;
   top: 0;
@@ -68,6 +81,10 @@ $padding-right: 40px;
   width: $col-3-width;
   margin: 30px 0 30px auto;
   text-align: center;
+
+  &:hover button {
+    text-decoration: underline;
+  }
 }
 
 .projectDescription {
