@@ -23,7 +23,8 @@ export const projects: Project[] = [
     year: 2020,
     type: 'branding, web, art direction',
     thumbnail: '/mock_1.jpg',
-    brief: 'TODO',
+    brief: 'Knowing is better than not knowing. That’s why TBD makes sexual health testing quick, easy and totally' +
+      ' private so women can know more with less hassle, and feel empowered to take care of their health. The TBD community also offers continuous support before, during and after testing.',
   },
   {
     slug: 'kharenko',
@@ -31,7 +32,8 @@ export const projects: Project[] = [
     year: 2019,
     type: 'visual identity, editorial',
     thumbnail: '/_teaser_postcard.jpg',
-    brief: 'TODO',
+    brief: 'Knowing is better than not knowing. That’s why TBD makes sexual health testing quick, easy and totally' +
+      ' private so women can know more with less hassle, and feel empowered to take care of their health. The TBD community also offers continuous support before, during and after testing.',
   },
   {
     slug: 'gallery',
@@ -39,7 +41,8 @@ export const projects: Project[] = [
     year: 2000,
     type: 'web',
     thumbnail: '/mock_1.jpg',
-    brief: 'TODO',
+    brief: 'Knowing is better than not knowing. That’s why TBD makes sexual health testing quick, easy and totally' +
+      ' private so women can know more with less hassle, and feel empowered to take care of their health. The TBD community also offers continuous support before, during and after testing.',
   },
   {
     slug: 'modernism',
@@ -47,7 +50,8 @@ export const projects: Project[] = [
     year: 2000,
     type: 'editorial',
     thumbnail: '/_teaser_postcard.jpg',
-    brief: 'TODO',
+    brief: 'Knowing is better than not knowing. That’s why TBD makes sexual health testing quick, easy and totally' +
+      ' private so women can know more with less hassle, and feel empowered to take care of their health. The TBD community also offers continuous support before, during and after testing.',
   },
   {
     slug: 'tigers',
@@ -64,6 +68,7 @@ export const projects: Project[] = [
     year: 2000,
     type: 'editorial',
     thumbnail: '/mock_1.jpg',
-    brief: 'TODO',
+    brief: 'Knowing is better than not knowing. That’s why TBD makes sexual health testing quick, easy and totally' +
+      ' private so women can know more with less hassle, and feel empowered to take care of their health. The TBD community also offers continuous support before, during and after testing.',
   }
 ]
