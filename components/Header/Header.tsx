@@ -3,6 +3,7 @@ import React from 'react';
 import s from './Header.module.scss';
 import classNames from 'classnames';
 import {Link, LinkProps} from '../Link';
+import {Heading} from '../Heading';
 
 export interface HeaderProps {
   link: LinkProps;
@@ -13,8 +14,8 @@ export class Header extends React.Component<HeaderProps> {
     const {link} = this.props;
 
     return (<>
-        <h2 className={classNames(s.heading, s.name)}>nick</h2>
-        <h2 className={classNames(s.heading, s.surname)}>deineko</h2>
+        <Heading className={s.name}>nick</Heading>
+        <Heading className={s.surname}>deineko</Heading>
 
         <Link {...link} className={s.toggle} active={true} />
 

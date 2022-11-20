@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {FocusEventHandler} from 'react';
 
 import s from './Link.module.scss';
 import classNames from 'classnames';
@@ -9,14 +9,19 @@ export interface LinkProps {
   children: string;
   className?: string;
   active?: boolean;
+  onFocus?: FocusEventHandler<HTMLAnchorElement>;
+  onBlur?: FocusEventHandler<HTMLAnchorElement>;
 }
 
 export class Link extends React.Component<LinkProps> {
   render() {
-    const {href, className, children, active} = this.props;
+    const {className, children, active, ...rest} = this.props;
 
     return (
-      <NextLink href={href} className={classNames(s.root, className, {[s.active]: active})}>
+      <NextLink
+        className={classNames(s.root, className, {[s.active]: active})}
+        {...rest}
+      >
         {children}
       </NextLink>
     );

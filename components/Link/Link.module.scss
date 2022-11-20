@@ -1,6 +1,8 @@
 .root {
   font-size: 36px;
   color: inherit;
+  line-height: 1;
+  height: 36px;
 
   &:not(.active) {
     text-decoration: none;

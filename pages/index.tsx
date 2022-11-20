@@ -1,7 +1,17 @@
 import Head from 'next/head'
 import {Main} from '../components';
+import {Project, projects} from '../data';
 
-export default function Index() {
+// This function gets called at build time
+export async function getStaticProps() {
+  return {
+    props: {
+      projects,
+    },
+  }
+}
+
+export default function Index({projects}: {projects: Project[]}) {
   return (
     <>
       <Head>
@@ -10,7 +20,7 @@ export default function Index() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Main />
+      <Main projects={projects}/>
     </>
   )
 }

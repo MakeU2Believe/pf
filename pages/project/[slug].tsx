@@ -1,6 +1,24 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import {ProjectPage as ProjectPageMarkup} from '../../components';
+import {Project, projects} from '../../data';
+import {GetStaticPaths, GetStaticProps} from 'next';
 
-export default function ProjectPage() {
+export const getStaticPaths: GetStaticPaths = () => {
+  return {
+    paths: projects.map(({slug}) => ({params: {slug}})),
+    fallback: false,
+  }
+}
+
+export const getStaticProps: GetStaticProps = ({params}) => {
+  return {
+    props: {
+      project: projects.find(({slug}) => slug === params?.slug) || {}
+    },
+  }
+}
+
+export default function ProjectPage({project}: {project: Project}) {
   return (
     <>
       <Head>
@@ -9,7 +27,7 @@ export default function ProjectPage() {
         <link rel="icon" href="/favicon.ico"/>
       </Head>
 
-      Project Page
+      <ProjectPageMarkup {...project}/>
     </>
   )
 }

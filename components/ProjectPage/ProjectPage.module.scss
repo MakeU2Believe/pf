@@ -1,0 +1,39 @@
+@import "../../styles/common";
+
+.initials {
+  grid-column-start: 3;
+  justify-self: end;
+  display: flex;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.content {
+  justify-self: normal;
+  display: flex;
+  flex-direction: column;
+  grid-area: 3 / 2 / 4 / 4;
+}
+
+.label {
+  font-size: 24px;
+}
+
+.projectHeader {
+  display: flex;
+  justify-items: center;
+  text-align: center;
+}
+
+.projectDetails {
+  width: $col-2-width;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.projectBrief {
+  width: $col-3-width;
+}

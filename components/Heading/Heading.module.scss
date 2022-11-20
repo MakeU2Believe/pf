@@ -1,0 +1,7 @@
+@import "../../styles/common";
+
+.heading {
+  @include rublena();
+  line-height: 1.25;
+  font-size: 10vw;
+}

@@ -1,52 +1,69 @@
 export type Project = {
   slug: string;
   title: string;
-  description: string;
-  year?: string;
-  thumbnail?: string;
+  type: string;
+  year: number;
+  thumbnail: string;
+  brief: string;
 }
 
 export const projects: Project[] = [
   {
     slug: 'litkovska',
     title: 'litkovska',
-    description: 'visual identity, art direction',
-    thumbnail: '/_stickers_mock_1.jpg'
+    year: 2018,
+    type: 'visual identity, art direction',
+    thumbnail: '/_teaser_postcard.jpg',
+    brief: 'Knowing is better than not knowing. That’s why TBD makes sexual health testing quick, easy and totally' +
+      ' private so women can know more with less hassle, and feel empowered to take care of their health. The TBD community also offers continuous support before, during and after testing.',
   },
   {
     slug: 'whaaat',
     title: 'wix whaaat',
-    description: 'branding, web, art direction',
-    thumbnail: '/_window_display.jpg'
+    year: 2020,
+    type: 'branding, web, art direction',
+    thumbnail: '/mock_1.jpg',
+    brief: 'TODO',
   },
   {
     slug: 'kharenko',
     title: 'sayenko kharenko',
-    description: 'visual identity, editorial',
-    thumbnail: '/_teaser_postcard.jpg'
+    year: 2019,
+    type: 'visual identity, editorial',
+    thumbnail: '/_teaser_postcard.jpg',
+    brief: 'TODO',
   },
   {
     slug: 'gallery',
     title: 'gallery',
-    description: 'web',
-    thumbnail: '/_stickers_mock_1.jpg'
+    year: 2000,
+    type: 'web',
+    thumbnail: '/mock_1.jpg',
+    brief: 'TODO',
   },
   {
     slug: 'modernism',
     title: 'soviet modernism',
-    description: 'editorial',
-    thumbnail: '/_teaser_postcard.jpg'
+    year: 2000,
+    type: 'editorial',
+    thumbnail: '/_teaser_postcard.jpg',
+    brief: 'TODO',
   },
   {
     slug: 'tigers',
     title: 'celebrating tigers',
-    description: 'editorial',
-    thumbnail: '/_stickers_mock_1.jpg'
+    year: 2000,
+    type: 'editorial',
+    thumbnail: '/_teaser_postcard.jpg',
+    brief: 'Knowing is better than not knowing. That’s why TBD makes sexual health testing quick, easy and totally' +
+      ' private so women can know more with less hassle, and feel empowered to take care of their health. The TBD community also offers continuous support before, during and after testing.',
   },
   {
     slug: 'koolban',
     title: 'koolban',
-    description: 'editorial',
-    thumbnail: '/_stickers_mock_1.jpg'
+    year: 2000,
+    type: 'editorial',
+    thumbnail: '/mock_1.jpg',
+    brief: 'TODO',
   }
 ]

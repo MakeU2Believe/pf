@@ -1,7 +1,7 @@
 import React from 'react';
 
 import s from './Main.module.scss';
-import {Project, projects} from '../../data';
+import type {Project} from '../../data';
 import {Layout} from '../Layout';
 import {ScrollableContent} from '../ScrollableContent';
 import {Header} from '../Header';
@@ -10,6 +10,7 @@ import {Label} from '../Label';
 import {Link} from '../Link';
 
 export interface MainProps {
+  projects: Project[];
 }
 
 export interface MainState {
@@ -26,14 +27,17 @@ export class Main extends React.Component<MainProps, MainState> {
   }
 
   render() {
+    const {activeProject} = this.state;
+
     return (
       <>
         <Layout>
           <Header link={{href: '/resume', children: 'résumé'}}/>
 
           <div className={s.thumbnailContainer}>
-            {this.state.activeProject && (
-              <img src={this.state.activeProject.thumbnail} className={s.thumbnail}/>
+            {activeProject && (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={activeProject.thumbnail} alt={activeProject.title} className={s.thumbnail} />
             )}
           </div>
 
@@ -44,16 +48,22 @@ export class Main extends React.Component<MainProps, MainState> {
 
         <ScrollableContent>
           <ul className={s.projects}>
-            {projects.map((project) => {
-              const {slug, title, description} = project;
+            {this.props.projects.map((project) => {
+              const {slug, title, year, type} = project;
 
               return (
                 <li className={s.project} key={title}
                     onMouseEnter={() => this.setActiveProject(project)}
                     onMouseLeave={() => this.setActiveProject(null)}>
-                  <Link href={`/project/${slug}`} className={s.projectLabel}
-                        active={this.state.activeProject === project}>{title}</Link>
-                  <p className={s.projectDescription}>{description}</p>
+                  <Link
+                    href={`/project/${slug}`} className={s.projectLabel}
+                    active={this.state.activeProject === project}
+                    onFocus={() => this.setActiveProject(project)}
+                    onBlur={() => this.setActiveProject(null)}
+                  >
+                    {title}
+                  </Link>
+                  <p className={s.projectDescription}>{type} <br /> {year}</p>
                 </li>
               )
             })}
