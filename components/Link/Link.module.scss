@@ -1,0 +1,8 @@
+.root {
+  font-size: 36px;
+  color: inherit;
+
+  &:not(.active) {
+    text-decoration: none;
+  }
+}

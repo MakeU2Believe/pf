@@ -2,8 +2,12 @@ import React from 'react';
 
 import s from './Main.module.scss';
 import {Project, projects} from '../../data';
-import classNames from 'classnames';
-import Link from 'next/link';
+import {Layout} from '../Layout';
+import {ScrollableContent} from '../ScrollableContent';
+import {Header} from '../Header';
+import {Footer} from '../Footer';
+import {Label} from '../Label';
+import {Link} from '../Link';
 
 export interface MainProps {
 }
@@ -24,15 +28,8 @@ export class Main extends React.Component<MainProps, MainState> {
   render() {
     return (
       <>
-        <main className={s.root}>
-          <h2 className={classNames(s.heading, s.interactive)}>nick</h2>
-          <h2 className={classNames(s.heading, s.interactive)}>deineko</h2>
-
-          <Link href="/resume" className={classNames(s.button, s.interactive)}>
-            résumé
-          </Link>
-
-          <h2 className={classNames(s.subtitle, s.interactive)}>art director, visual designer, tutor, car lover.</h2>
+        <Layout>
+          <Header link={{href: '/resume', children: 'résumé'}}/>
 
           <div className={s.thumbnailContainer}>
             {this.state.activeProject && (
@@ -40,28 +37,28 @@ export class Main extends React.Component<MainProps, MainState> {
             )}
           </div>
 
-          <div className={classNames(s.fonts, s.interactive)}>
-            typefaces: rublena © ktf; mantonico © minttype
-          </div>
-          <div className={classNames(s.contacts, s.interactive)}>
-            +38 063 348 35 48   |   mykola.a.deineko@gmail.com
-          </div>
-        </main>
+          <Label className={s.label}>work</Label>
 
-        <ul className={s.projects}>
-          {projects.map((project) => {
-            const {title, description } = project;
+          <Footer/>
+        </Layout>
 
-            return (
-              <li className={s.project} key={title}
-                  onMouseEnter={() => this.setActiveProject(project)}
-                  onMouseLeave={() => console.log('=')}>
-                <button className={classNames(s.button, s.projectLabel)}>{title}</button>
-                <p className={s.projectDescription}>{description}</p>
-              </li>
-            )
-          })}
-        </ul>
+        <ScrollableContent>
+          <ul className={s.projects}>
+            {projects.map((project) => {
+              const {slug, title, description} = project;
+
+              return (
+                <li className={s.project} key={title}
+                    onMouseEnter={() => this.setActiveProject(project)}
+                    onMouseLeave={() => this.setActiveProject(null)}>
+                  <Link href={`/project/${slug}`} className={s.projectLabel}
+                        active={this.state.activeProject === project}>{title}</Link>
+                  <p className={s.projectDescription}>{description}</p>
+                </li>
+              )
+            })}
+          </ul>
+        </ScrollableContent>
       </>
     );
   }

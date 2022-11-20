@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import {Main} from '../components';
+import {Resume as ResumeMarkup } from '../components';
 
 export default function Resume() {
   return (
@@ -10,7 +10,7 @@ export default function Resume() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Main />
+      <ResumeMarkup />
     </>
   )
 }

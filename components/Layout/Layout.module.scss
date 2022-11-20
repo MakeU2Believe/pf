@@ -1,0 +1,23 @@
+$row-1-height: 25vh;
+$row-2-height: 10vh;
+$row-3-height: 1fr;
+$row-4-height: 50px;
+
+$col-1-width: 1fr;
+$col-2-width: 30vw;
+$col-3-width: 40vw;
+$col-4-width: 40px;
+
+.root {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns:$col-1-width $col-2-width $col-3-width $col-4-width;
+  grid-template-rows: $row-1-height $row-2-height $row-3-height $row-4-height;
+  justify-items: center;
+
+  & > * {
+    position: relative;
+    z-index: 1;
+  }
+}

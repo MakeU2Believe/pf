@@ -1,0 +1,8 @@
+@import "../../styles/common";
+
+.root {
+  @include rublena();
+  font-size: 14px;
+  display: block;
+  text-align: right;
+}
