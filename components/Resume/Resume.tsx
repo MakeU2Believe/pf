@@ -21,6 +21,8 @@ export class Resume extends React.Component<ResumeProps> {
         </Layout>
 
         <ScrollableContent>
+          <Header />
+
           <div className={s.content}>
             <Label>career</Label>
             <p>

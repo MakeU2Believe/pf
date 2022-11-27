@@ -1,10 +1,19 @@
 @import "../../styles/common";
 
-.name {
+.name,
+.toggle {
   grid-column-start: 2;
 }
 
+.surname,
+.subtitle {
+  grid-column-start: 4;
+}
+
 .toggle {
-  grid-column-start: 2;
   z-index: $layer-interactive;
+}
+
+.fake {
+  visibility: hidden;
 }

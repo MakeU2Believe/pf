@@ -5,8 +5,8 @@ import classNames from 'classnames';
 import {Link, LinkProps} from '../Link';
 import {Heading} from '../Heading';
 
-export interface HeaderProps {
-  link: LinkProps;
+export type HeaderProps = {
+  link?: LinkProps;
 }
 
 export class Header extends React.Component<HeaderProps> {
@@ -14,12 +14,17 @@ export class Header extends React.Component<HeaderProps> {
     const {link} = this.props;
 
     return (<>
-        <Heading className={s.name}>nick</Heading>
-        <Heading className={s.surname}>deineko</Heading>
+        <Heading className={classNames(s.name, {
+          [s.fake]: !link,
+        })}>nick</Heading>
+        <Heading className={classNames(s.surname, {
+          [s.fake]: !link,
+        })}>deineko</Heading>
 
-        <Link {...link} className={s.toggle} active={true} />
+        {this.props.link && <Link {...this.props.link} className={s.toggle} active={true}/>}
 
-        <h2 className={classNames(s.subtitle)}>art director, visual designer, tutor, car lover.</h2>
+        {this.props.link &&
+          <h2 className={classNames(s.subtitle)}>art director, visual designer, tutor, car lover.</h2>}
       </>
     );
   }

@@ -5,9 +5,11 @@
   grid-row-start: 4;
   position: relative;
   z-index: $layer-interactive;
+  white-space: nowrap;
 }
 
 .copyright {
-  grid-column-start: 3;
+  grid-column-start: 4;
   grid-row-start: 4;
+  white-space: nowrap;
 }

@@ -47,6 +47,8 @@ export class Main extends React.Component<MainProps, MainState> {
         </Layout>
 
         <ScrollableContent>
+          <Header />
+
           <ul className={s.projects}>
             {this.props.projects.map((project) => {
               const {slug, title, year, type} = project;

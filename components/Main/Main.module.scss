@@ -16,10 +16,11 @@
   text-align: right;
   align-self: flex-start;
   justify-self: flex-end;
+  grid-column-start: 4;
 }
 
 .projects {
-  grid-column-start: 3;
+  grid-column-start: 4;
   grid-row-start: 3;
   list-style: none;
   margin: 0;
