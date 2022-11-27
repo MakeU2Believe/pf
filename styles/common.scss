@@ -8,6 +8,14 @@ $col-2-width: 30vw;
 $col-3-width: 40vw;
 $col-4-width: 40px;
 
+$layer-interactive: 10;
+
+$color-light-background: #fff;
+$color-light-text: #000;
+
+$color-dark-background: #111;
+$color-dark-text: #fff;
+
 @mixin rublena() {
   font-family: rublena, sans-serif;
   font-weight: 900;
@@ -16,4 +24,9 @@ $col-4-width: 40px;
 @mixin mantonico() {
   font-family: mantonico, sans-serif;
   font-weight: 300;
+}
+
+:export {
+  darkBackgroundColor: $color-dark-background;
+  darkTextColor: $color-dark-text;
 }

@@ -7,9 +7,4 @@
   grid-template-columns:$col-1-width $col-2-width $col-3-width $col-4-width;
   grid-template-rows: $row-1-height $row-2-height $row-3-height $row-4-height;
   justify-items: center;
-
-  & > * {
-    position: relative;
-    z-index: 1;
-  }
 }

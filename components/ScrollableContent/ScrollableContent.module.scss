@@ -1,6 +1,10 @@
+@import "../../styles/common";
+
 .root {
   position: fixed;
   top: 0;
   left: 0;
   overflow: auto;
+  mix-blend-mode: difference;
+  color: var(--content-text-color, $color-light-background);
 }

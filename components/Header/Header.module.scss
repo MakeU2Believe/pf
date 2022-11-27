@@ -1,7 +1,10 @@
+@import "../../styles/common";
+
 .name {
   grid-column-start: 2;
 }
 
 .toggle {
   grid-column-start: 2;
+  z-index: $layer-interactive;
 }

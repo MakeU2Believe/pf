@@ -18,4 +18,6 @@
 
 html {
     @include mantonico();
+    background-color: var(--page-bg-color, $color-light-background);
+    color: var(--page-text-color, $color-light-text);
 }

@@ -1,6 +1,10 @@
+@import "../../styles/common";
+
 .contacts {
   grid-column-start: 2;
   grid-row-start: 4;
+  position: relative;
+  z-index: $layer-interactive;
 }
 
 .copyright {
