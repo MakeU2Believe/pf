@@ -28,11 +28,12 @@ export class Main extends React.Component<MainProps, MainState> {
 
   render() {
     const {activeProject} = this.state;
+    const linkProps = {href: '/resume', children: 'résumé'};
 
     return (
       <>
         <Layout>
-          <Header link={{href: '/resume', children: 'résumé'}}/>
+          <Header link={linkProps}/>
 
           <div className={s.thumbnailContainer}>
             {activeProject && (
@@ -47,7 +48,7 @@ export class Main extends React.Component<MainProps, MainState> {
         </Layout>
 
         <ScrollableContent>
-          <Header />
+          <Header link={linkProps} fake={true}/>
 
           <ul className={s.projects}>
             {this.props.projects.map((project) => {
