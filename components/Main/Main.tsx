@@ -51,7 +51,10 @@ export class Main extends React.Component<MainProps, MainState> {
           <Header link={linkProps} fake={true}/>
 
           <ul className={s.projects}>
-            {this.props.projects.map((project) => {
+            {new Array(5)
+              .fill(undefined)
+              .flatMap(() => [...this.props.projects])
+              .map((project) => {
               const {slug, title, year, type} = project;
 
               return (

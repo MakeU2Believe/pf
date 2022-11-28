@@ -13,3 +13,10 @@
   grid-row-start: 4;
   white-space: nowrap;
 }
+
+.contacts,
+.copyright {
+  @include rublena();
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}

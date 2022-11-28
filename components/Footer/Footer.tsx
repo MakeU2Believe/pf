@@ -11,7 +11,7 @@ export class Footer extends React.Component<FooterProps> {
     return (
       <>
         <div className={classNames(s.copyright)}>
-          typefaces: rublena © ktf; mantonico © minttype
+          typefaces: rublena © ktf | mantonico © minttype
         </div>
         <div className={classNames(s.contacts)}>
           +38 063 348 35 48 | mykola.a.deineko@gmail.com
