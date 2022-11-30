@@ -7,7 +7,8 @@ import {ScrollableContent} from '../ScrollableContent';
 import {Header} from '../Header';
 import {Footer} from '../Footer';
 import {Label} from '../Label';
-import {Link} from '../Link';
+import NextLink from 'next/link';
+import {Heading} from '../Heading';
 
 export interface MainProps {
   projects: Project[];
@@ -37,8 +38,10 @@ export class Main extends React.Component<MainProps, MainState> {
 
           <div className={s.thumbnailContainer}>
             {activeProject && (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={activeProject.thumbnail} alt={activeProject.title} className={s.thumbnail} />
+              <div className={s.projectDetails}>
+                <Heading level="H3">{activeProject.title}</Heading>
+                <p className={s.projectDescription}>{activeProject.type} <br/> {activeProject.year}</p>
+              </div>
             )}
           </div>
 
@@ -51,25 +54,22 @@ export class Main extends React.Component<MainProps, MainState> {
           <Header link={linkProps} fake={true}/>
 
           <ul className={s.projects}>
-            {new Array(5)
-              .fill(undefined)
-              .flatMap(() => [...this.props.projects])
-              .map((project) => {
-              const {slug, title, year, type} = project;
+            {this.props.projects.map((project) => {
+              const {slug, title} = project;
 
               return (
-                <li className={s.project} key={title}
-                    onMouseEnter={() => this.setActiveProject(project)}
-                    onMouseLeave={() => this.setActiveProject(null)}>
-                  <Link
-                    href={`/project/${slug}`} className={s.projectLabel}
-                    active={this.state.activeProject === project}
+                <li
+                  key={title}
+                  onMouseEnter={() => this.setActiveProject(project)}
+                  // onMouseLeave={() => this.setActiveProject(null)}
+                >
+                  <NextLink
+                    href={`/project/${slug}`}
                     onFocus={() => this.setActiveProject(project)}
                     onBlur={() => this.setActiveProject(null)}
                   >
-                    {title}
-                  </Link>
-                  <p className={s.projectDescription}>{type} <br /> {year}</p>
+                    <img src={project.thumbnail} alt={project.title} className={s.thumbnail}/>
+                  </NextLink>
                 </li>
               )
             })}

@@ -1,7 +1,13 @@
 @import "../../styles/common";
 
-.heading {
+.h2 {
   @include rublena();
   line-height: 1.1;
   font-size: 170px;
+}
+
+.h3 {
+  font-size: 30px;
+  line-height: 1;
+  height: 36px;
 }

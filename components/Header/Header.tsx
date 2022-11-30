@@ -2,11 +2,14 @@ import React from 'react';
 
 import s from './Header.module.scss';
 import classNames from 'classnames';
-import {Link, LinkProps} from '../Link';
 import {Heading} from '../Heading';
+import NextLink from 'next/link';
 
 export type HeaderProps = {
-  link: LinkProps;
+  link: {
+    href: string,
+    children: string,
+  };
   fake?: true;
 }
 
@@ -15,20 +18,23 @@ export class Header extends React.Component<HeaderProps> {
     const {link, fake} = this.props;
 
     return (<>
-        <Heading className={classNames(s.name, {
+        <Heading level="H2" className={classNames(s.name, {
           [s.fake]: fake,
         })}>nick</Heading>
-        <Heading className={classNames(s.surname, {
+        <Heading level="H2" className={classNames(s.surname, {
           [s.fake]: fake,
         })}>deineko</Heading>
 
-        <Link {...link} className={classNames(s.toggle, {
+        <Heading level="H3" className={classNames(s.toggle, {
           [s.fake]: fake,
-        })} active={true}/>
+        })}>
+          <NextLink {...link} />
+        </Heading>
 
-        <h2 className={classNames(s.subtitle, {
+
+        <Heading level="H3" className={classNames(s.subtitle, {
             [s.fake]: fake,
-          })}>art director, visual designer, tutor, car lover.</h2>
+          })}>art director, visual designer, tutor, car lover.</Heading>
       </>
     );
   }

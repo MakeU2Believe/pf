@@ -12,6 +12,11 @@
 
 .toggle {
   z-index: $layer-interactive;
+  text-decoration: underline;
+
+  a {
+    color: inherit;
+  }
 }
 
 .toggle,

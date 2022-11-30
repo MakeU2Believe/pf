@@ -8,8 +8,15 @@
 }
 
 .thumbnail {
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 200px;
+  margin: 12px auto;
+  filter: grayscale(1);
+  transition: all .3s ease-out;
+
+  &:hover,
+  &:focus-visible {
+    filter: none;
+  }
 }
 
 .label {
@@ -27,13 +34,12 @@
   padding: 0 0 64px;
 }
 
-.project {
-  width: 100%;
-  margin: 44px 0 44px auto;
+.projectDetails {
   text-align: center;
 }
 
 .projectDescription {
   font-size: 16px;
   line-height: 1.6;
+  margin-top: 12px;
 }

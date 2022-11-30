@@ -16,7 +16,7 @@ export class ProjectPage extends React.Component<Project> {
     return (
       <>
         <Layout className={s.pageLayout}>
-          <Heading className={s.initials}>
+          <Heading level="H2" className={s.initials}>
             <Link href="/">
               nd
             </Link>
