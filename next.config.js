@@ -1,8 +1,13 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-  images: {unoptimized: true},
-}
+const {PHASE_DEVELOPMENT_SERVER} = require("next/constants");
 
-module.exports = nextConfig
+module.exports = (phase, { defaultConfig }) => {
+  /**
+   * @type {import('next').NextConfig}
+   */
+  return {
+    reactStrictMode: true,
+    swcMinify: true,
+    basePath: phase !== PHASE_DEVELOPMENT_SERVER ? '/pf' : '',
+    images: {unoptimized: true},
+  }
+}
