@@ -5,6 +5,7 @@ export type Project = {
   year: number;
   thumbnail: string;
   brief: string;
+  media: (string | (string | null)[])[]
 }
 
 export const projects: Project[] = [
@@ -16,6 +17,7 @@ export const projects: Project[] = [
     thumbnail: '/_litkovska_thumb.jpg',
     brief: 'Knowing is better than not knowing. That’s why TBD makes sexual health testing quick, easy and totally' +
       ' private so women can know more with less hassle, and feel empowered to take care of their health. The TBD community also offers continuous support before, during and after testing.',
+    media: [],
   },
   {
     slug: 'whaaat',
@@ -25,6 +27,18 @@ export const projects: Project[] = [
     thumbnail: '/_whaaat_thumb.jpg',
     brief: 'Knowing is better than not knowing. That’s why TBD makes sexual health testing quick, easy and totally' +
       ' private so women can know more with less hassle, and feel empowered to take care of their health. The TBD community also offers continuous support before, during and after testing.',
+    media: [
+      '/_1.jpg',
+      // '/_2.gif',
+      // ['/_4_1.jpg', null],
+      // [null, '/_4_2.jpg'],
+      // '/_5.gif',
+      '/_7.jpg',
+      '/_8.jpg',
+      '/_9.jpg',
+      '/_10.jpg',
+      '/_11.jpg',
+    ],
   },
   {
     slug: 'kharenko',
@@ -34,6 +48,7 @@ export const projects: Project[] = [
     thumbnail: '/_koolban_thumb.jpg',
     brief: 'Knowing is better than not knowing. That’s why TBD makes sexual health testing quick, easy and totally' +
       ' private so women can know more with less hassle, and feel empowered to take care of their health. The TBD community also offers continuous support before, during and after testing.',
+    media: [],
   },
   {
     slug: 'gallery',
@@ -43,6 +58,7 @@ export const projects: Project[] = [
     thumbnail: '/_koolban_thumb.jpg',
     brief: 'Knowing is better than not knowing. That’s why TBD makes sexual health testing quick, easy and totally' +
       ' private so women can know more with less hassle, and feel empowered to take care of their health. The TBD community also offers continuous support before, during and after testing.',
+    media: [],
   },
   {
     slug: 'modernism',
@@ -52,6 +68,7 @@ export const projects: Project[] = [
     thumbnail: '/_modernism_thumb.jpg',
     brief: 'Knowing is better than not knowing. That’s why TBD makes sexual health testing quick, easy and totally' +
       ' private so women can know more with less hassle, and feel empowered to take care of their health. The TBD community also offers continuous support before, during and after testing.',
+    media: [],
   },
   {
     slug: 'tigers',
@@ -61,6 +78,7 @@ export const projects: Project[] = [
     thumbnail: '/_tigers_thumb.jpg',
     brief: 'Knowing is better than not knowing. That’s why TBD makes sexual health testing quick, easy and totally' +
       ' private so women can know more with less hassle, and feel empowered to take care of their health. The TBD community also offers continuous support before, during and after testing.',
+    media: [],
   },
   {
     slug: 'koolban',
@@ -70,6 +88,7 @@ export const projects: Project[] = [
     thumbnail: '/_koolban_thumb.jpg',
     brief: 'Knowing is better than not knowing. That’s why TBD makes sexual health testing quick, easy and totally' +
       ' private so women can know more with less hassle, and feel empowered to take care of their health. The TBD community also offers continuous support before, during and after testing.',
+    media: [],
   }
 ].map((project) => ({
   ...project,

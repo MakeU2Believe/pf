@@ -1,39 +1,52 @@
 @import "../../styles/common";
 
 .initials {
-  grid-column-start: 3;
+  grid-column-start: 4;
   justify-self: end;
   display: flex;
 
   a {
-    color: inherit;
     text-decoration: none;
   }
 }
 
 .content {
-  justify-self: normal;
-  display: flex;
-  flex-direction: column;
-  grid-area: 3 / 2 / 4 / 4;
+  --row-3-height: min-content;
+  --row-4-height: 1fr;
 }
 
 .label {
   font-size: 24px;
-}
-
-.projectHeader {
+  grid-column-start: 4;
+  grid-row-start: 2;
   display: flex;
-  justify-items: center;
-  text-align: center;
+  align-items: flex-end;
+  justify-self: flex-end;
 }
 
 .projectDetails {
-  width: $col-2-width;
   font-size: 16px;
   line-height: 1.6;
+  grid-column-start: 2;
 }
 
 .projectBrief {
-  width: $col-3-width;
+  grid-column-start: 4;
+}
+
+.projectDetails,
+.projectBrief {
+  grid-row-start: 3;
+  display: flex;
+  text-align: center;
+}
+
+.media {
+  margin-top: 60px;
+  grid-column: 2 / 5;
+  grid-row-start: 4;
+}
+
+.row {
+  margin: 24px 0;
 }

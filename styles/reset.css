@@ -84,3 +84,7 @@ button {
     line-height: inherit;
     padding: 0;
 }
+
+a {
+    color: inherit;
+}
