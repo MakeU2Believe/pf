@@ -7,11 +7,23 @@
   grid-column-start: 2;
 }
 
+.thumbContainer {
+  background: #fff;
+  transition: all .3s ease-out;
+
+  &:hover,
+  &:focus-within {
+    background: transparent;
+  }
+}
+
 .thumbnail {
   max-width: 200px;
   margin: 12px auto;
   filter: grayscale(1);
   transition: all .3s ease-out;
+  mix-blend-mode: difference;
+  position: relative;
 
   &:hover,
   &:focus-visible {
@@ -31,11 +43,17 @@
   grid-row-start: 3;
   list-style: none;
   margin: 0;
-  padding: 0 0 64px;
+  padding: 64px 0;
 }
 
 .projectDetails {
   text-align: center;
+  transition: all .3s ease-out;
+  opacity: 0;
+
+  &.active {
+    opacity: 1;
+  }
 }
 
 .projectDescription {

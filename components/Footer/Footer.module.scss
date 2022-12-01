@@ -2,21 +2,18 @@
 
 .contacts {
   grid-column-start: 2;
-  grid-row-start: 4;
-  position: relative;
-  z-index: $layer-interactive;
-  white-space: nowrap;
 }
 
 .copyright {
   grid-column-start: 4;
-  grid-row-start: 4;
-  white-space: nowrap;
 }
 
 .contacts,
 .copyright {
   @include rublena();
+  @include blend-content();
   font-size: 10px;
   letter-spacing: 0.1em;
+  white-space: nowrap;
+  grid-row-start: 4;
 }

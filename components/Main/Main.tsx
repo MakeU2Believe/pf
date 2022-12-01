@@ -9,26 +9,38 @@ import {Footer} from '../Footer';
 import {Label} from '../Label';
 import NextLink from 'next/link';
 import {Heading} from '../Heading';
+import classNames from 'classnames';
 
 export interface MainProps {
   projects: Project[];
 }
 
 export interface MainState {
-  activeProject: Project | null;
+  lastActiveProject: Project | null;
+  isActive: boolean;
 }
 
 export class Main extends React.Component<MainProps, MainState> {
   state: MainState = {
-    activeProject: null,
+    lastActiveProject: null,
+    isActive: false,
   }
 
-  private setActiveProject(project: Project | null) {
-    this.setState({activeProject: project});
+  private setActiveProject(project: Project) {
+    this.setState({
+      lastActiveProject: project,
+      isActive: true,
+    });
+  }
+
+  private unSetActiveProject() {
+    this.setState({
+      isActive: false,
+    });
   }
 
   render() {
-    const {activeProject} = this.state;
+    const {isActive, lastActiveProject} = this.state;
     const linkProps = {href: '/resume', children: 'résumé'};
 
     return (
@@ -37,12 +49,12 @@ export class Main extends React.Component<MainProps, MainState> {
           <Header link={linkProps}/>
 
           <div className={s.thumbnailContainer}>
-            {activeProject && (
-              <div className={s.projectDetails}>
-                <Heading level="H3">{activeProject.title}</Heading>
-                <p className={s.projectDescription}>{activeProject.type} <br/> {activeProject.year}</p>
-              </div>
-            )}
+            <div className={classNames(s.projectDetails, {
+              [s.active]: isActive
+            })}>
+              <Heading level="H3">{lastActiveProject?.title}</Heading>
+              <p className={s.projectDescription}>{lastActiveProject?.type} <br/> {lastActiveProject?.year}</p>
+            </div>
           </div>
 
           <Label className={s.label}>work</Label>
@@ -59,14 +71,15 @@ export class Main extends React.Component<MainProps, MainState> {
 
               return (
                 <li
+                  className={s.thumbContainer}
                   key={title}
                   onMouseEnter={() => this.setActiveProject(project)}
-                  // onMouseLeave={() => this.setActiveProject(null)}
+                  onMouseLeave={() => this.unSetActiveProject()}
                 >
                   <NextLink
                     href={`/project/${slug}`}
                     onFocus={() => this.setActiveProject(project)}
-                    onBlur={() => this.setActiveProject(null)}
+                    onBlur={() => this.unSetActiveProject()}
                   >
                     <img src={project.thumbnail} alt={project.title} className={s.thumbnail}/>
                   </NextLink>

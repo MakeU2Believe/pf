@@ -10,15 +10,13 @@
   grid-column-start: 4;
 }
 
-.toggle {
-  z-index: $layer-interactive;
-}
-
-.toggle,
-.subtitle {
-  padding-bottom: 70px;
-}
-
 .fake {
   visibility: hidden;
+}
+
+.name,
+.surname,
+.toggle,
+.subtitle {
+  @include blend-content();
 }

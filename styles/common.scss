@@ -27,6 +27,12 @@ $color-dark-text: #fff;
   font-weight: 300;
 }
 
+@mixin blend-content() {
+  z-index: $layer-interactive;
+  mix-blend-mode: difference;
+  color: $color-dark-text;
+}
+
 :export {
   darkBackgroundColor: $color-dark-background;
   darkTextColor: $color-dark-text;
