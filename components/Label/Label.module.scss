@@ -3,7 +3,7 @@
 .root {
   @include rublena();
   font-size: 14px;
-  letter-spacing: 0.1em;
+  @include letter-spacing(0.1em);
   display: block;
   text-align: right;
 }

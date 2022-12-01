@@ -33,6 +33,11 @@ $color-dark-text: #fff;
   color: $color-dark-text;
 }
 
+@mixin letter-spacing($value) {
+  letter-spacing: $value;
+  margin-right: -$value;
+}
+
 :export {
   darkBackgroundColor: $color-dark-background;
   darkTextColor: $color-dark-text;

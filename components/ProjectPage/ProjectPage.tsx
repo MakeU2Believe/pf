@@ -17,6 +17,8 @@ export class ProjectPage extends React.Component<Project> {
     return (
       <div className={s.root}>
         <Layout className={s.pageLayout}>
+          <Header link={{href: '/', children: ''}} fake={true}/>
+
           <Heading level="H2" className={s.initials}>
             <Link href="/">
               nd
@@ -28,20 +30,21 @@ export class ProjectPage extends React.Component<Project> {
 
         <ScrollableContent className={s.content}>
           <Header link={{href: '/', children: ''}} fake={true}/>
-            <Label className={s.label}>{title}</Label>
 
-            <p className={s.projectDetails}>{type} <br /> {year}</p>
-            <p className={s.projectBrief}>
-              {brief}
-            </p>
+          <Label className={s.label}>{title}</Label>
 
-            <div className={s.media}>
-              {
-                media.map((row, i) => {
-                  return <img key={i} src={`/_wixwhaaat/${row}`} alt="" className={s.row}/>
-                })
-              }
-            </div>
+          <p className={s.projectDetails}>{type} <br/> {year}</p>
+          <p className={s.projectBrief}>
+            {brief}
+          </p>
+
+          <div className={s.media}>
+            {
+              media.map((row, i) => {
+                return <img key={i} src={`/_wixwhaaat/${row}`} alt="" className={s.row}/>
+              })
+            }
+          </div>
         </ScrollableContent>
       </div>
     );
