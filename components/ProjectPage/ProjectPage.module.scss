@@ -54,11 +54,27 @@
 }
 
 .media {
-  margin-top: 60px;
+  margin: 60px 0;
   grid-column: 2 / 5;
   grid-row-start: 4;
 }
 
 .row {
-  margin: 24px 0;
+  margin-top: 24px;
+  display: flex;
+
+  &.twoItems {
+    margin-left: -12px;
+    margin-right: -12px;
+
+    & > * {
+      flex: 0 0 50%;
+      padding: 0 12px;
+    }
+  }
+
+  video,
+  img {
+    max-width: 100%;
+  }
 }

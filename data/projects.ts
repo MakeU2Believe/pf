@@ -28,16 +28,16 @@ export const projects: Project[] = [
     brief: 'Knowing is better than not knowing. That’s why TBD makes sexual health testing quick, easy and totally' +
       ' private so women can know more with less hassle, and feel empowered to take care of their health. The TBD community also offers continuous support before, during and after testing.',
     media: [
-      '/_1.jpg',
+      '_1.jpg',
       // '/_2.gif',
-      // ['/_4_1.jpg', null],
-      // [null, '/_4_2.jpg'],
-      // '/_5.gif',
-      '/_7.jpg',
-      '/_8.jpg',
-      '/_9.jpg',
-      '/_10.jpg',
-      '/_11.jpg',
+      ['_4_1.jpg', null],
+      [null, '_4_2.jpg'],
+      '_6.mp4',
+      '_7.jpg',
+      '_8.jpg',
+      '_9.jpg',
+      '_10.jpg',
+      '_11.jpg',
     ],
   },
   {
@@ -92,5 +92,10 @@ export const projects: Project[] = [
   }
 ].map((project) => ({
   ...project,
-  thumbnail: `/_thumbs${project.thumbnail}`
+  thumbnail: `/_thumbs${project.thumbnail}`,
+  media: project.media.map((row) => {
+    return Array.isArray(row)
+      ? row.map((rowItem) => rowItem ? `/${project.slug}/${rowItem}` : rowItem)
+      : `/${project.slug}/${row}`
+  }),
 }));

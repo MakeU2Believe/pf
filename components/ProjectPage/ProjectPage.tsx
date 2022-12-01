@@ -9,6 +9,7 @@ import {Project} from '../../data';
 import Link from 'next/link';
 import {Label} from '../Label';
 import {Header} from '../Header';
+import classNames from 'classnames';
 
 export class ProjectPage extends React.Component<Project> {
   render() {
@@ -41,12 +42,47 @@ export class ProjectPage extends React.Component<Project> {
           <div className={s.media}>
             {
               media.map((row, i) => {
-                return <img key={i} src={`/_wixwhaaat/${row}`} alt="" className={s.row}/>
+                return (
+                  <div
+                    key={i}
+                    className={classNames(s.row, {
+                      [s.twoItems]: Array.isArray(row) && row.length === 2
+                    })}
+                  >
+                    {
+                      Array.isArray(row)
+                        ? (
+                          row.map((rowItem, j) => (
+                            <div key={`${i}${j}`}>
+                              {rowItem && this.renderMedia(rowItem)}
+                            </div>
+                          ))
+                        ) : (
+                          this.renderMedia(row)
+                        )
+                    }
+                  </div>
+                )
               })
             }
           </div>
         </ScrollableContent>
       </div>
     );
+  }
+
+  private renderMedia(src: string) {
+    switch (true) {
+      case src.endsWith('mp4'):
+        return (
+          <video key={src} src={src} autoPlay loop muted playsInline/>
+        );
+      case src.endsWith('jpg'):
+        return (
+          <img key={src} src={src} alt=""/>
+        );
+      default:
+        return 'UNRECOGNIZED FILE TYPE 😭'
+    }
   }
 }
