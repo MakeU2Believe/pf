@@ -3,6 +3,7 @@
 .h2 {
   @include rublena();
   line-height: 1.1;
+  letter-spacing: 0.1em;
   font-size: 170px;
 }
 
