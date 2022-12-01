@@ -1,13 +1,5 @@
 @import "../../styles/common";
 
-.contacts {
-  grid-column-start: 2;
-}
-
-.copyright {
-  grid-column-start: 4;
-}
-
 .contacts,
 .copyright {
   @include rublena();
@@ -16,4 +8,16 @@
   font-size: 10px;
   white-space: nowrap;
   grid-row-start: 4;
+}
+
+.contacts {
+  grid-column-start: 2;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.copyright {
+  grid-column-start: 4;
 }
