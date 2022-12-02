@@ -14,7 +14,7 @@ export default function Index({projects}: {projects: Project[]}) {
   return (
     <>
       <PageHead
-        title="Index"
+        title="Nick Deineko"
         description=""
       />
 

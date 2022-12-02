@@ -4,7 +4,7 @@ export default function Resume() {
   return (
     <>
       <PageHead
-        title="Resume"
+        title="Résumé"
         description=""
       />
 

@@ -23,7 +23,7 @@ export default function ProjectPage({project}: {project: Project}) {
   return (
     <>
       <PageHead
-        title={title}
+        title={`Project | ${title}`}
         description={`${type} | ${year}`}
       />
 
