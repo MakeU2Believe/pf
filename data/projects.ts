@@ -10,92 +10,96 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: 'litkovska',
-    title: 'litkovska',
-    year: 2018,
-    type: 'visual identity, art direction',
-    thumbnail: '/_litkovska_thumb.jpg',
-    brief: 'Knowing is better than not knowing. That’s why TBD makes sexual health testing quick, easy and totally' +
-      ' private so women can know more with less hassle, and feel empowered to take care of their health. The TBD community also offers continuous support before, during and after testing.',
-    media: [],
-  },
-  {
-    slug: 'whaaat',
+    slug: 'wix-whaaat',
     title: 'wix whaaat',
     year: 2020,
     type: 'branding, web, art direction',
-    thumbnail: '/_whaaat_thumb.jpg',
-    brief: 'Knowing is better than not knowing. That’s why TBD makes sexual health testing quick, easy and totally' +
-      ' private so women can know more with less hassle, and feel empowered to take care of their health. The TBD community also offers continuous support before, during and after testing.',
+    brief: 'Wix Whaaat is a work-free zone for employees with a variety of services offered. Coffee shop, beauty space, store, nap room — whatever is required to recharge during the day. My role in this project included visual identity design, photoshoot creative direction, and website development.',
     media: [
-      '_1.jpg',
-      // '/_2.gif',
-      ['_4_1.jpg', null],
-      [null, '_4_2.jpg'],
-      '_6.mp4',
-      '_7.jpg',
-      '_8.jpg',
-      '_9.jpg',
-      '_10.jpg',
-      '_11.jpg',
+      '1.jpg',
+      '2.mp4',
+      '3.jpg',
+      [null, '4_2.jpg'],
+      ['5_1.jpg', null],
+      '6.mp4',
+      '7.mp4',
+      '8.jpg',
+      '9.jpg',
+      '10.jpg',
+      '11.jpg',
+      '12.jpg',
     ],
   },
   {
-    slug: 'kharenko',
+    slug: 'litkovska',
+    title: 'litkovska',
+    year: 2018,
+    type: 'identity, art direction',
+    brief: 'The Litkovska commissioned Hooga for a visual identity update in 2018. The agency’s approach was to anchor the identity around the bespoke tailored wordmark. As part of the team, I was responsible for assets design, including BCs, tags, labels, pe bags, and packaging boxes.',
+    media: [],
+  },
+  {
+    slug: 'sayenko-kharenko',
     title: 'sayenko kharenko',
-    year: 2019,
-    type: 'visual identity, editorial',
-    thumbnail: '/_koolban_thumb.jpg',
-    brief: 'Knowing is better than not knowing. That’s why TBD makes sexual health testing quick, easy and totally' +
-      ' private so women can know more with less hassle, and feel empowered to take care of their health. The TBD community also offers continuous support before, during and after testing.',
+    year: 2021,
+    type: 'identity, art direction',
+    brief: 'Visual identity facelift for the top-ranked Ukrainian law firm. The project goal was to refine the' +
+      ' existing firm’s logo, adjust the color palette, and develop a bold visual approach for how assets across different media are treated. The outcome is an optically balanced icon, refined logotype, and complete package of digital and print templates.',
     media: [],
   },
   {
-    slug: 'gallery',
-    title: 'gallery',
-    year: 2000,
-    type: 'web',
-    thumbnail: '/_koolban_thumb.jpg',
-    brief: 'Knowing is better than not knowing. That’s why TBD makes sexual health testing quick, easy and totally' +
-      ' private so women can know more with less hassle, and feel empowered to take care of their health. The TBD community also offers continuous support before, during and after testing.',
-    media: [],
-  },
-  {
-    slug: 'modernism',
-    title: 'soviet modernism',
-    year: 2000,
-    type: 'editorial',
-    thumbnail: '/_modernism_thumb.jpg',
-    brief: 'Knowing is better than not knowing. That’s why TBD makes sexual health testing quick, easy and totally' +
-      ' private so women can know more with less hassle, and feel empowered to take care of their health. The TBD community also offers continuous support before, during and after testing.',
-    media: [],
-  },
-  {
-    slug: 'tigers',
+    slug: 'celebrating-tigers',
     title: 'celebrating tigers',
-    year: 2000,
+    year: 2018,
+    type: 'editorial, packaging',
+    brief: 'Fundraising project to help the “Tiger Canyon” hotel in South Africa. The coffee-table book with wildlife photography by Alex Kirichko. Standard edition of 900 copies, plus 100 premium edition examples packed in a bespoke gift box and came with a unique set of art prints. Designed in collaboration with Dmytro Yarynych. Photography: Alex Kirichko, words: John Varty. Printed by:',
+    media: [],
+  },
+  {
+    slug: 'soviet-modernism',
+    title: 'soviet modernism, brutalism, post-modernism',
+    year: 2019,
     type: 'editorial',
-    thumbnail: '/_tigers_thumb.jpg',
-    brief: 'Knowing is better than not knowing. That’s why TBD makes sexual health testing quick, easy and totally' +
-      ' private so women can know more with less hassle, and feel empowered to take care of their health. The TBD community also offers continuous support before, during and after testing.',
+    brief: 'Olexyi Bykov’s photographic homage to works of soviet Ukrainian architects. It displays modernist' +
+      ' objects within diverse architectural environment of modern Ukrainian cities. Photogrpahy: Alex Bykov. Words: Ievgeniia Gubkina, Alex Bykov and John Nicholson. Published by: Osnovy. Printed by: DOM. ISBN: 9789665008194',
+    media: [],
+  },
+  {
+    slug: 'mriya',
+    title: 'mriya',
+    year: 2022,
+    type: 'personal, poster',
+    brief: 'The largest cargo airplane was destroyed within the first days of russian invasion of Ukraine. It' +
+      ' existed in a single example. This personal project is a tribute to such a beautiful and majestic piece of' +
+      ' machinery. Printed in an edition of 225 pcs. All of the profit was donated to the volunteers, which help ukrainian armed forces.',
+    media: [],
+  },
+  {
+    slug: 'gallery-detailing',
+    title: 'gallery detailing',
+    year: 2021,
+    type: 'web',
+    brief: 'Brand consulting and a web design for the car detailing studio based in Kyiv.',
     media: [],
   },
   {
     slug: 'koolban',
     title: 'koolban',
-    year: 2000,
+    year: 2019,
     type: 'editorial',
-    thumbnail: '/_koolban_thumb.jpg',
-    brief: 'Knowing is better than not knowing. That’s why TBD makes sexual health testing quick, easy and totally' +
-      ' private so women can know more with less hassle, and feel empowered to take care of their health. The TBD community also offers continuous support before, during and after testing.',
+    brief: 'Identity and packaging design for the compostable trash bags manufacturer. The most utilitarian has to look business, so the sources for visual inspiration were construction machinery, tools and community services.',
     media: [],
   }
-].map((project) => ({
-  ...project,
-  thumbnail: `/_thumbs${project.thumbnail}`,
-  media: project.media.map((row) => {
-    return Array.isArray(row)
-      ? row.map((rowItem) => rowItem ? `/${project.slug}/${rowItem}` : rowItem)
-      : `/${project.slug}/${row}`
-  }),
-}));
+].map((project) => {
+  const {slug, media} = project;
+
+  return {
+    ...project,
+    thumbnail: `/${slug}/thumb.jpg`,
+    media: media.map((row) => {
+      return Array.isArray(row)
+        ? row.map((rowItem) => rowItem ? `/${slug}/${rowItem}` : rowItem)
+        : `/${slug}/${row}`
+    }),
+  }
+});
