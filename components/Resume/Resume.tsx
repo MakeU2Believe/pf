@@ -42,9 +42,14 @@ export class Resume extends React.Component<ResumeProps> {
 
             <Label className={s.label}>expertise</Label>
             <p>
-              high proficiency: illustrator, indesign, photoshop, figma, editor x, javascript
+              art direction, branding, identity design, web design, editorial design
+            </p>
+
+            <Label className={s.label}>skills</Label>
+            <p>
+              HIGH PROFICIENCY: illustrator, indesign, photoshop, figma, editor x, javascript
               <br />
-              goofing around with: webflow, after effect, cinema 4d, html/css
+              GOOFING AROUND WITH: webflow, after effect, cinema 4d, html/css
             </p>
 
             <Label className={s.label}>education</Label>

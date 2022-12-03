@@ -38,6 +38,10 @@ $color-dark-text: #fff;
   margin-right: -$value;
 }
 
+@mixin phone {
+  @media (max-width: 768px) { @content; }
+}
+
 :export {
   darkBackgroundColor: $color-dark-background;
   darkTextColor: $color-dark-text;

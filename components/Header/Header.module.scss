@@ -17,6 +17,10 @@
 
 .fake {
   visibility: hidden;
+
+  @include phone() {
+    display: none;
+  }
 }
 
 .name,
@@ -24,4 +28,15 @@
 .toggle,
 .subtitle {
   @include blend-content();
+}
+
+.name,
+.surname {
+  text-align: right;
+}
+
+.toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
 }

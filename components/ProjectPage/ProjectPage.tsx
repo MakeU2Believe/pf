@@ -53,7 +53,9 @@ export class ProjectPage extends React.Component<Project> {
                       Array.isArray(row)
                         ? (
                           row.map((rowItem, j) => (
-                            <div key={`${i}${j}`}>
+                            <div key={`${i}${j}`} className={classNames({
+                              [s.empty]: !rowItem
+                            })}>
                               {rowItem && this.renderMedia(rowItem)}
                             </div>
                           ))

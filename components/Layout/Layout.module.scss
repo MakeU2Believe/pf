@@ -16,4 +16,10 @@
     var(--row-3-height, $row-3-height)
     var(--row-4-height, $row-4-height);
   justify-items: center;
+
+  @include phone() {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
 }

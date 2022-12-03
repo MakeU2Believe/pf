@@ -31,32 +31,38 @@
   @include letter-spacing(0.08em);
   grid-column-start: 4;
   grid-row-start: 2;
-  display: flex;
-  align-items: flex-end;
-  justify-self: flex-end;
+  margin-left: auto;
 }
 
 .projectDetails {
   font-size: 16px;
   line-height: 1.6;
   grid-column-start: 2;
+  text-align: center;
+
+  @include phone() {
+    text-align: right;
+  }
 }
 
 .projectBrief {
   grid-column-start: 4;
+  text-align: center;
 }
 
 .projectDetails,
 .projectBrief {
   grid-row-start: 3;
-  display: flex;
-  text-align: center;
 }
 
 .media {
   margin: 60px 0;
   grid-column: 2 / 5;
   grid-row-start: 4;
+
+  @include phone() {
+    margin: 0;
+  }
 }
 
 .row {
@@ -70,11 +76,21 @@
     & > * {
       flex: 0 0 50%;
       padding: 0 12px;
+
+      @include phone() {
+        flex-grow: 1;
+      }
     }
   }
 
   video,
   img {
     max-width: 100%;
+  }
+}
+
+.empty {
+  @include phone() {
+    display: none;
   }
 }

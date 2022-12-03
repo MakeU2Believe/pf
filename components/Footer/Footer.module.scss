@@ -12,12 +12,24 @@
 
 .contacts {
   grid-column-start: 2;
+  text-align: center;
 
   a {
     text-decoration: none;
+  }
+
+  @include phone() {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
   }
 }
 
 .copyright {
   grid-column-start: 4;
+
+  @include phone() {
+    display: none;
+  }
 }
