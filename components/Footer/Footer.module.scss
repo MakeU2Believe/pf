@@ -4,7 +4,7 @@
 .copyright {
   @include rublena();
   @include blend-content();
-  @include letter-spacing(0.1em);
+  @include letter-spacing(0.15em);
   font-size: 10px;
   white-space: nowrap;
   grid-row-start: 4;
