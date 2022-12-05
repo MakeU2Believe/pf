@@ -37,7 +37,7 @@
 .projectDetails {
   font-size: 16px;
   line-height: 1.8;
-  font-variant-numeric: oldstyle-nums;
+  font-feature-settings: 'pnum' on, 'onum' on;
   grid-column-start: 2;
   text-align: center;
 
