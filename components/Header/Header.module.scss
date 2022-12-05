@@ -36,7 +36,9 @@
 }
 
 .toggle {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
+  @include phone() {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  }
 }
