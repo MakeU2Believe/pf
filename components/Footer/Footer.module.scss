@@ -2,10 +2,10 @@
 
 .contacts,
 .copyright {
-  @include rublena();
+  @include mantonico();
   @include blend-content();
-  @include letter-spacing(0.15em);
-  font-size: 10px;
+  @include letter-spacing(0.02em);
+  font-size: 14px;
   white-space: nowrap;
   grid-row-start: 4;
 }

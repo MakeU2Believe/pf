@@ -28,7 +28,7 @@
 
 .label {
   font-size: 20px;
-  @include letter-spacing(0.08em);
+  @include letter-spacing(0.1em);
   grid-column-start: 4;
   grid-row-start: 2;
   margin-left: auto;
@@ -67,7 +67,7 @@
 }
 
 .row {
-  margin-top: 24px;
+  margin-top: 12px;
   display: flex;
 
   &.twoItems {
