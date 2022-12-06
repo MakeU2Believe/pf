@@ -20,11 +20,11 @@ export class ProjectPage extends React.Component<Project> {
         <Layout className={s.pageLayout}>
           <Header link={{href: '/', children: ''}} fake={true}/>
 
-          <Heading level="H2" className={s.initials}>
+          <span className={s.initials}>
             <Link href="/">
               nd
             </Link>
-          </Heading>
+          </span>
 
           <Footer/>
         </Layout>

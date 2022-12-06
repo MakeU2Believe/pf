@@ -8,13 +8,16 @@
 }
 
 .initials {
+  @include rublena();
   grid-row-start: 1;
   grid-column-start: 4;
   justify-self: end;
   display: flex;
-  margin-right: -0.11em;
   mix-blend-mode: difference;
   color: $color-light-background;
+  line-height: 1.1;
+  @include letter-spacing(0.06em);
+  font-size: 96px;
 
   a {
     text-decoration: none;
