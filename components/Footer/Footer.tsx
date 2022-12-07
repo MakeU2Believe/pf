@@ -18,7 +18,7 @@ export class Footer extends React.Component<FooterProps> {
           <a href={`mailto:${email}`}>{email}</a>
         </div>
         <div className={s.copyright}>
-          typefaces: rublena © ktf, mantonico © minttype
+          typefaces: rublena © ktf, mantonico © mint type
         </div>
       </>
     );
