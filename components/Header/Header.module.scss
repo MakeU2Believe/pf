@@ -32,7 +32,12 @@
 
 .name,
 .surname {
-  text-align: right;
+  grid-row: 1 / 2;
+}
+
+.toggle,
+.subtitle {
+  grid-row: 2 / 3;
 }
 
 .toggle {
