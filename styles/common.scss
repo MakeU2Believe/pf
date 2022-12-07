@@ -5,7 +5,7 @@ $row-4-height: 32px;
 
 $col-1-width: 3fr;
 $col-2-width: min-content;
-$col-3-width: 1.45fr;
+$col-3-width: minmax(180px, 1.45fr);
 $col-4-width: min-content;
 $col-5-width: 30px;
 
