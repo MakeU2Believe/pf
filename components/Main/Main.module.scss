@@ -1,10 +1,4 @@
-.thumbnailContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  grid-column-start: 2;
-  grid-row: 1 / 5;
-}
+@import "../../styles/common";
 
 .thumbContainer {
   background: #fff;
@@ -31,7 +25,7 @@
 }
 
 .label {
-  padding-top: 0px;
+  padding-top: $content-padding-top;
   align-self: flex-start;
   justify-self: flex-end;
   grid-column-start: 4;
@@ -46,9 +40,12 @@
 }
 
 .projectDetails {
-  text-align: center;
   transition: all .3s ease-out;
   opacity: 0;
+  align-self: center;
+  text-align: center;
+  grid-column-start: 2;
+  grid-row: 1 / 5;
 
   &.active {
     opacity: 1;

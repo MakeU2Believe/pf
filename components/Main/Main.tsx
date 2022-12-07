@@ -48,13 +48,11 @@ export class Main extends React.Component<MainProps, MainState> {
         <Layout>
           <Header link={linkProps}/>
 
-          <div className={s.thumbnailContainer}>
-            <div className={classNames(s.projectDetails, {
-              [s.active]: isActive
-            })}>
-              <Heading level="H3">{lastActiveProject?.title}</Heading>
-              <p className={s.projectDescription}>{lastActiveProject?.type} <br/> {lastActiveProject?.year}</p>
-            </div>
+          <div className={classNames(s.projectDetails, {
+            [s.active]: isActive
+          })}>
+            <Heading level="H3">{lastActiveProject?.title}</Heading>
+            <p className={s.projectDescription}>{lastActiveProject?.type} <br/> {lastActiveProject?.year}</p>
           </div>
 
           <Label className={s.label}>work</Label>
@@ -74,7 +72,7 @@ export class Main extends React.Component<MainProps, MainState> {
                   className={s.thumbContainer}
                   key={title}
                   onMouseEnter={() => this.setActiveProject(project)}
-                  onMouseLeave={() => this.unSetActiveProject()}
+                  // onMouseLeave={() => this.unSetActiveProject()}
                 >
                   <NextLink
                     href={`/project/${slug}`}
