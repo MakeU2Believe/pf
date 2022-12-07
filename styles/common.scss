@@ -37,7 +37,7 @@ $color-dark-text: #fff;
 
 @mixin letter-spacing($value) {
   letter-spacing: $value;
-  margin-right: -$value;
+  margin-right: -($value * 1.1); // multiplier for better compensation for elements with big font size
 }
 
 @mixin phone {
