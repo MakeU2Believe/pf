@@ -3,7 +3,7 @@ $row-2-height: min-content;
 $row-3-height: 1fr;
 $row-4-height: 32px;
 
-$col-1-width: 3fr;
+$col-1-width: minmax(30px, 3fr);;
 $col-2-width: min-content;
 $col-3-width: minmax(180px, 1.45fr);
 $col-4-width: min-content;
