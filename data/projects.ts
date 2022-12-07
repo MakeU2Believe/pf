@@ -133,22 +133,6 @@ export const projects: Project[] = [
       [null, '6_1.mp4'],
     ],
   },
-  {
-    slug: 'gallery-detailing',
-    title: 'gallery detailing',
-    year: 2021,
-    type: 'web',
-    brief: 'Brand consulting and web design for the car detailing studio based in Kyiv.',
-    media: [],
-  },
-  {
-    slug: 'koolban',
-    title: 'koolban',
-    year: 2019,
-    type: 'editorial',
-    brief: 'Identity and packaging design for the compostable trash bags manufacturer. The most utilitarian has to look business, so the sources for visual inspiration were construction machinery, tools and community services.',
-    media: [],
-  }
 ].map((project) => {
   const { slug, media } = project;
 

@@ -6,6 +6,7 @@ export default function Resume() {
       <PageHead
         title="Résumé"
         description=""
+        faviconMode="light"
       />
 
       <style>{`:root { --page-bg-color: #111; --page-text-color: #fff;}`}</style>

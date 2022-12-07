@@ -11,6 +11,8 @@ $col-5-width: 30px;
 
 $layer-interactive: 10;
 
+$content-padding-top: 60px;
+
 $color-light-background: #fff;
 $color-light-text: #000;
 
@@ -35,7 +37,7 @@ $color-dark-text: #fff;
 
 @mixin letter-spacing($value) {
   letter-spacing: $value;
-  margin-right: -$value;
+  margin-right: -($value * 1.1); // multiplier for better compensation for elements with big font size
 }
 
 @mixin phone {
