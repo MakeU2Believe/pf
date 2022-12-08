@@ -2,8 +2,7 @@
 
 @font-face {
     font-family: 'mantonico';
-    src: url('../fonts/mantonico/mantonico-light-webfont.woff2') format('woff2'),
-    url('../fonts/mantonico/mantonico-light-webfont.woff') format('woff');
+    src: url('../fonts/mantonico/mantonico-light.otf') format('otf');
     font-weight: 300;
     font-style: normal;
 }
@@ -18,6 +17,8 @@
 
 html {
     @include mantonico();
+    font-feature-settings: "onum" on;
+    font-variant-numeric: oldstyle-nums;
     background-color: var(--page-bg-color, $color-light-background);
     color: var(--page-text-color, $color-light-text);
 }

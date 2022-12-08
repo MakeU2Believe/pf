@@ -27,6 +27,7 @@ $color-dark-text: #fff;
 @mixin mantonico() {
   font-family: mantonico, sans-serif;
   font-weight: 300;
+  font-variant-numeric: oldstyle-nums;
 }
 
 @mixin blend-content() {
