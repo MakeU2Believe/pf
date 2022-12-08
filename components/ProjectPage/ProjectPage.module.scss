@@ -15,8 +15,8 @@
   display: flex;
   mix-blend-mode: difference;
   color: $color-light-background;
-  line-height: 1.1;
-  @include letter-spacing(0.06em);
+  line-height: 1.3em;
+  @include letter-spacing(0.08em);
   font-size: 96px;
 
   a {
@@ -30,7 +30,7 @@
 }
 
 .label {
-  font-size: 20px;
+  font-size: 18px;
   @include letter-spacing(0.1em);
   grid-column-start: 4;
   grid-row-start: 2;
