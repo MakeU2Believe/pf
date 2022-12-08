@@ -17,8 +17,7 @@
 
 html {
     @include mantonico();
-    font-feature-settings: "onum" on;
-    font-variant-numeric: oldstyle-nums;
+    font-variant-numeric: slashed-zero;
     background-color: var(--page-bg-color, $color-light-background);
     color: var(--page-text-color, $color-light-text);
 }
