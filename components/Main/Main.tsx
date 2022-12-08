@@ -72,7 +72,7 @@ export class Main extends React.Component<MainProps, MainState> {
                   className={s.thumbContainer}
                   key={title}
                   onMouseEnter={() => this.setActiveProject(project)}
-                  // onMouseLeave={() => this.unSetActiveProject()}
+                  onMouseLeave={() => this.unSetActiveProject()}
                 >
                   <NextLink
                     href={`/project/${slug}`}
