@@ -45,7 +45,9 @@
   align-self: center;
   text-align: center;
   grid-column-start: 2;
-  grid-row: 1 / 5;
+  grid-row: 2 / 5;
+  max-width: 300px;
+  margin-bottom: 24px;
 
   &.active {
     opacity: 1;
@@ -55,5 +57,5 @@
 .projectDescription {
   font-size: 16px;
   line-height: 1.6;
-  margin-top: 8px;
+  margin-top: 12px;
 }
