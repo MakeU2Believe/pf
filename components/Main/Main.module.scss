@@ -61,6 +61,10 @@
   @include notPhone() {
     padding: 64px 0;
   }
+
+  @include phone() {
+    padding: 240px 0 100px;
+  }
 }
 
 .projectDetails {
