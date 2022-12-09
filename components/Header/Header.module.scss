@@ -11,8 +11,14 @@
 }
 
 .subtitle {
+  @include h3();
   max-width: 300px;
+  margin: 0 auto;
   text-align: center;
+
+  @include phone() {
+    margin-top: 12px;
+  }
 }
 
 .fake {
@@ -32,6 +38,8 @@
 
 .name,
 .surname {
+  @include h2();
+  text-align: right;
   grid-row: 1 / 2;
 }
 
@@ -41,9 +49,31 @@
 }
 
 .toggle {
+  @include notPhone() {
+    @include h3();
+  }
+
   @include phone() {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 36px;
+    right: 10px;
+    width: 51px;
+    height: 51px;
+    border-radius: 50%;
+    background-color: var(--page-text-color, $color-light-text);
+    font-size: 0;
+    mix-blend-mode: normal;
+
+    &:after {
+      content: attr(data-title);
+      position: absolute;
+      top: 15px;
+      left: 13px;
+      @include rublena();
+      @include letter-spacing(0.1em);
+      font-size: 20px;
+      line-height: 1;
+      color: var(--page-bg-color, $color-light-background);
+    }
   }
 }

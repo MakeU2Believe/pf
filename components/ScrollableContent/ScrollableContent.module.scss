@@ -5,4 +5,8 @@
   top: 0;
   left: 0;
   overflow: auto;
+
+  @include phone() {
+    padding-top: 240px;
+  }
 }

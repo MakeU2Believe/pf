@@ -8,7 +8,6 @@ import {Header} from '../Header';
 import {Footer} from '../Footer';
 import {Label} from '../Label';
 import NextLink from 'next/link';
-import {Heading} from '../Heading';
 import classNames from 'classnames';
 
 export interface MainProps {
@@ -39,21 +38,30 @@ export class Main extends React.Component<MainProps, MainState> {
     });
   }
 
+  private renderProjectDetails({isActive, project}: {isActive: boolean, project: Project | null}) {
+    return (
+      <div className={classNames(s.projectDetails, {
+        [s.active]: isActive
+      })}>
+        <h4 className={s.projectTitle}>{project?.title}</h4>
+        <p className={s.projectDescription}>{project?.type} <br/> {project?.year}</p>
+      </div>
+    )
+  }
+
   render() {
     const {isActive, lastActiveProject} = this.state;
-    const linkProps = {href: '/resume', children: 'résumé'};
+    const linkProps = {href: '/resume', text: 'résumé', mobileText: 'cv'};
 
     return (
       <>
         <Layout>
           <Header link={linkProps}/>
 
-          <div className={classNames(s.projectDetails, {
-            [s.active]: isActive
-          })}>
-            <Heading level="H3">{lastActiveProject?.title}</Heading>
-            <p className={s.projectDescription}>{lastActiveProject?.type} <br/> {lastActiveProject?.year}</p>
-          </div>
+          {this.renderProjectDetails({
+            isActive,
+            project: lastActiveProject,
+          })}
 
           <Label className={s.label}>work</Label>
 
@@ -80,6 +88,11 @@ export class Main extends React.Component<MainProps, MainState> {
                     onBlur={() => this.unSetActiveProject()}
                   >
                     <img src={project.thumbnail} alt={project.title} className={s.thumbnail}/>
+
+                    {this.renderProjectDetails({
+                      isActive: true,
+                      project,
+                    })}
                   </NextLink>
                 </li>
               )
