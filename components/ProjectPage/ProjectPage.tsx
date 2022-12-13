@@ -10,10 +10,11 @@ import Link from 'next/link';
 import {Label} from '../Label';
 import {Header} from '../Header';
 import classNames from 'classnames';
+import NextLink from 'next/link';
 
 export class ProjectPage extends React.Component<Project> {
   render() {
-    const {title, year, type, brief, media} = this.props;
+    const {title, year, type, brief, prev, next, media} = this.props;
 
     return (
       <div className={s.root}>
@@ -67,6 +68,17 @@ export class ProjectPage extends React.Component<Project> {
                 )
               })
             }
+
+                <NextLink
+                    href={`/project/${prev}`}
+                  >
+                    {prev}
+                  </NextLink>
+                  <NextLink
+                    href={`/project/${next}`}
+                  >
+                    {next}
+                  </NextLink>
           </div>
         </ScrollableContent>
       </div>

@@ -3,12 +3,14 @@ export type Project = {
   title: string;
   type: string;
   year: number;
+  prev: string;
+  next: string;
   thumbnail: string;
   brief: string;
   media: (string | (string | null)[])[]
 }
 
-export const projects: Project[] = [
+const rawProjects = [
   {
     slug: 'wix-whaaat',
     title: 'wix whaaat',
@@ -133,7 +135,10 @@ export const projects: Project[] = [
       [null, '6_1.mp4'],
     ],
   },
-].map((project) => {
+];
+
+
+export const projects: Project[] = rawProjects.map((project, i) => {
   const { slug, media } = project;
 
   return {
@@ -144,5 +149,7 @@ export const projects: Project[] = [
         ? row.map((rowItem) => rowItem ? `/${slug}/${rowItem}` : rowItem)
         : `/${slug}/${row}`
     }),
+    prev: (i === 0 ? projects[projects.length - 1] : projects[i - 1]).id,
+    next: (projects.length === i + 1 ? projects[0] : projects[i + 1]).id,
   }
 });
