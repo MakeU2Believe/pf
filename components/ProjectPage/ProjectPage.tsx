@@ -4,7 +4,6 @@ import s from './ProjectPage.module.scss';
 import {Layout} from '../Layout';
 import {Footer} from '../Footer';
 import {ScrollableContent} from '../ScrollableContent';
-import {Heading} from '../Heading';
 import {Project} from '../../data';
 import Link from 'next/link';
 import {Label} from '../Label';
@@ -19,19 +18,17 @@ export class ProjectPage extends React.Component<Project> {
     return (
       <div className={s.root}>
         <Layout className={s.pageLayout}>
-          <Header link={{href: '/', children: ''}} fake={true}/>
+          <Header fake={true}/>
 
-          <span className={s.initials}>
-            <Link href="/">
-              nd
-            </Link>
-          </span>
+          <Link href="/" className={s.initials}>
+            nd
+          </Link>
 
           <Footer/>
         </Layout>
 
         <ScrollableContent className={s.content}>
-          <Header link={{href: '/', children: ''}} fake={true}/>
+          <Header fake={true}/>
 
           <Label className={s.label}>{title}</Label>
 

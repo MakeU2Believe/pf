@@ -2,31 +2,37 @@
 
 .pageLayout {
   & > * {
-    position: relative;
     z-index: $layer-interactive;
   }
 }
 
 .initials {
   @include rublena();
+  position: relative;
   grid-row-start: 1;
   grid-column-start: 4;
   justify-self: end;
   display: flex;
   mix-blend-mode: difference;
   color: $color-light-background;
-  line-height: 1.3em;
+  line-height: 1.3;
   @include letter-spacing(0.08em);
   font-size: 96px;
+  margin-left: auto;
+  text-decoration: none;
 
-  a {
-    text-decoration: none;
+  @include phone() {
+    font-size: 72px;
   }
 }
 
 .content {
   --row-3-height: min-content;
   --row-4-height: 1fr;
+
+  @include phone() {
+    padding-top: 120px;
+  }
 }
 
 .label {
@@ -52,6 +58,10 @@
 .projectBrief {
   grid-column-start: 4;
   text-align: center;
+
+  @include phone() {
+    padding: 24px 20px 0;
+  }
 }
 
 .projectDetails,
@@ -60,12 +70,12 @@
 }
 
 .media {
-  margin: 54px 0;
+  padding: 54px 0 156px;
   grid-column: 2 / 5;
   grid-row-start: 4;
 
   @include phone() {
-    margin: 0;
+    padding: 36px 0 280px;
   }
 }
 

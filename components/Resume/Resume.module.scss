@@ -1,10 +1,18 @@
 @import "../../styles/common";
 
 .content {
-  grid-column-start: 4;
-  grid-row-start: 3;
   text-align: center;
-  padding: $content-padding-top 0 100px;
+
+  @include notPhone() {
+    grid-column-start: 4;
+    grid-row-start: 3;
+    padding: $content-padding-top 0 100px;
+  }
+
+  @include phone() {
+    padding: 240px 0 100px;
+  }
+
 
   p {
     margin-bottom: 32px;

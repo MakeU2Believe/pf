@@ -12,7 +12,7 @@ export interface ResumeProps {
 
 export class Resume extends React.Component<ResumeProps> {
   render() {
-    const linkProps = {href: '/', children: 'portfolio'};
+    const linkProps = {href: '/', text: 'portfolio', mobileText: 'pf'};
 
     return (
       <>

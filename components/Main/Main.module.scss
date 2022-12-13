@@ -8,6 +8,20 @@
   &:focus-within {
     background: transparent;
   }
+
+  @include phone() {
+    margin-bottom: 36px;
+  }
+
+  @include notPhone() {
+    .projectDetails {
+      display: none;
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .thumbnail {
@@ -17,6 +31,8 @@
   transition: all .3s ease-out;
   mix-blend-mode: difference;
   position: relative;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
 
   &:hover,
   &:focus-visible {
@@ -29,6 +45,10 @@
   align-self: flex-start;
   justify-self: flex-end;
   grid-column-start: 4;
+
+  @include phone() {
+    display: none !important;
+  }
 }
 
 .projects {
@@ -36,7 +56,15 @@
   grid-row-start: 3;
   list-style: none;
   margin: 0;
-  padding: 64px 0;
+  padding-left: 0;
+
+  @include notPhone() {
+    padding: 64px 0;
+  }
+
+  @include phone() {
+    padding: 240px 0 100px;
+  }
 }
 
 .projectDetails {
@@ -47,15 +75,30 @@
   grid-column-start: 2;
   grid-row: 2 / 5;
   max-width: 300px;
-  margin-bottom: 24px;
 
   &.active {
     opacity: 1;
   }
+
+  @include notPhone() {
+    margin-bottom: 24px;
+  }
+
+  @include phone() {
+    margin: 0 auto;
+  }
+}
+
+.projectTitle {
+  @include h3();
 }
 
 .projectDescription {
   font-size: 16px;
   line-height: 1.6;
   margin-top: 12px;
+
+  @include phone() {
+    margin-top: 4px;
+  }
 }
