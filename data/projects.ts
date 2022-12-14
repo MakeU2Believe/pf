@@ -3,8 +3,8 @@ export type Project = {
   title: string;
   type: string;
   year: number;
-  prev: string;
-  next: string;
+  prev: Omit<Project, 'prev' | 'next' | 'thumbnail'>;
+  next: Omit<Project, 'prev' | 'next' | 'thumbnail'>;
   thumbnail: string;
   brief: string;
   media: (string | (string | null)[])[]
@@ -14,7 +14,7 @@ const rawProjects = [
   {
     slug: 'wix-whaaat',
     title: 'wix whaaat',
-    year: '(2020)',
+    year: 2020,
     type: 'branding, web, art direction',
     brief: 'Wix Whaaat is a work-free zone for employees with a variety of services offered. Coffee shop, beauty space, store, nap room — whatever is required to recharge during the day. My role in this project included visual identity design, photoshoot creative direction, and website development.',
     media: [
@@ -149,7 +149,7 @@ export const projects: Project[] = rawProjects.map((project, i) => {
         ? row.map((rowItem) => rowItem ? `/${slug}/${rowItem}` : rowItem)
         : `/${slug}/${row}`
     }),
-    prev: (i === 0 ? projects[projects.length - 1] : projects[i - 1]).id,
-    next: (projects.length === i + 1 ? projects[0] : projects[i + 1]).id,
+    prev: rawProjects[i === 0 ? rawProjects.length - 1 : i - 1],
+    next: rawProjects[rawProjects.length === i + 1 ? 0 : i + 1],
   }
 });

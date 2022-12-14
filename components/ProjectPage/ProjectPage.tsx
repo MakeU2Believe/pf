@@ -66,16 +66,17 @@ export class ProjectPage extends React.Component<Project> {
               })
             }
 
-                <NextLink
-                    href={`/project/${prev}`}
-                  >
-                    {prev}
-                  </NextLink>
-                  <NextLink
-                    href={`/project/${next}`}
-                  >
-                    {next}
-                  </NextLink>
+            <NextLink
+              href={`/project/${prev.slug}`}
+            >
+              {`<`} {prev.title}
+            </NextLink>
+            <br/>
+            <NextLink
+              href={`/project/${next.slug}`}
+            >
+              {next.title} {`>`}
+            </NextLink>
           </div>
         </ScrollableContent>
       </div>
