@@ -14,7 +14,7 @@ const rawProjects = [
   {
     slug: 'wix-whaaat',
     title: 'wix whaaat',
-    year: 2020,
+    year: '(2020)',
     type: 'branding, web, art direction',
     brief: 'Wix Whaaat is a work-free zone for employees with a variety of services offered. Coffee shop, beauty space, store, nap room — whatever is required to recharge during the day. My role in this project included visual identity design, photoshoot creative direction, and website development.',
     media: [
