@@ -89,7 +89,7 @@ export class ProjectPage extends React.Component<Project> {
         return (
           <video key={src} src={src} autoPlay loop muted playsInline/>
         );
-      case src.endsWith('jpg'):
+      case src.endsWith('jpg') || src.endsWith('jpeg'):
         return (
           <img key={src} src={src} alt=""/>
         );

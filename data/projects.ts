@@ -1,16 +1,19 @@
-export type Project = {
+type RawProject = {
   slug: string;
   title: string;
   type: string;
   year: number;
-  prev: Omit<Project, 'prev' | 'next' | 'thumbnail'>;
-  next: Omit<Project, 'prev' | 'next' | 'thumbnail'>;
-  thumbnail: string;
   brief: string;
   media: (string | (string | null)[])[]
 }
 
-const rawProjects = [
+export type Project = RawProject & {
+  prev: RawProject;
+  next: RawProject;
+  thumbnail: string;
+}
+
+const rawProjects: RawProject[] = [
   {
     slug: 'wix-whaaat',
     title: 'wix whaaat',
