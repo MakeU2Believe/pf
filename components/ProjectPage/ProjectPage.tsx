@@ -32,7 +32,7 @@ export class ProjectPage extends React.Component<Project> {
 
           <Label className={s.label}>{title}</Label>
 
-          <p className={s.projectDetails}>{type} <br/> ({year})</p>
+          <p className={s.projectDetails}>{type} <br/> ( {year} )</p>
           <p className={s.projectBrief}>
             {brief}
           </p>

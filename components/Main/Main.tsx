@@ -44,7 +44,7 @@ export class Main extends React.Component<MainProps, MainState> {
         [s.active]: isActive
       })}>
         <h4 className={s.projectTitle}>{project?.title}</h4>
-        <p className={s.projectDescription}>{project?.type} <br/> ({project?.year})</p>
+        <p className={s.projectDescription}>{project?.type} <br/> ( {project?.year} )</p>
       </div>
     )
   }
