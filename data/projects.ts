@@ -8,7 +8,6 @@ type RawProject = {
 }
 
 export type Project = RawProject & {
-  prev: RawProject;
   next: RawProject;
   thumbnail: string;
 }
@@ -152,7 +151,6 @@ export const projects: Project[] = rawProjects.map((project, i) => {
         ? row.map((rowItem) => rowItem ? `/${slug}/${rowItem}` : rowItem)
         : `/${slug}/${row}`
     }),
-    prev: rawProjects[i === 0 ? rawProjects.length - 1 : i - 1],
     next: rawProjects[rawProjects.length === i + 1 ? 0 : i + 1],
   }
 });

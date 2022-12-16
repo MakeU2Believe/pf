@@ -9,11 +9,18 @@ import Link from 'next/link';
 import {Label} from '../Label';
 import {Header} from '../Header';
 import classNames from 'classnames';
-import NextLink from 'next/link';
 
 export class ProjectPage extends React.Component<Project> {
+  private contentRef = React.createRef<HTMLDivElement>();
+
+  componentDidUpdate() {
+    if (this.contentRef.current) {
+      this.contentRef.current.scrollTop = 0;
+    }
+  }
+
   render() {
-    const {title, year, type, brief, prev, next, media} = this.props;
+    const {title, year, type, brief, next, media} = this.props;
 
     return (
       <div className={s.root}>
@@ -65,19 +72,18 @@ export class ProjectPage extends React.Component<Project> {
                 )
               })
             }
-
-            <NextLink
-              href={`/project/${prev.slug}`}
-            >
-              {`<`} {prev.title}
-            </NextLink>
-            <br/>
-            <NextLink
-              href={`/project/${next.slug}`}
-            >
-              {next.title} {`>`}
-            </NextLink>
           </div>
+
+          <span className={s.nextProjectTitle}>
+            next project
+          </span>
+
+          <Link
+            href={`/project/${next.slug}`}
+            className={s.nextProjectLink}
+          >
+            <span className={s.nextProjectValue}>{next.title}</span> →
+          </Link>
         </ScrollableContent>
       </div>
     );
