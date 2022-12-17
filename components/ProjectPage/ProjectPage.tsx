@@ -25,7 +25,7 @@ export class ProjectPage extends React.Component<Project> {
     return (
       <div className={s.root}>
         <Layout className={s.pageLayout}>
-          <Header fake={true}/>
+          <Header inContent={true} hideMobile={true} />
 
           <Link href="/" className={s.initials}>
             nd
@@ -34,8 +34,8 @@ export class ProjectPage extends React.Component<Project> {
           <Footer/>
         </Layout>
 
-        <ScrollableContent className={s.content}>
-          <Header fake={true}/>
+        <ScrollableContent className={s.content} rootRef={this.contentRef}>
+          <Header inContent={true} hideMobile={true} />
 
           <Label className={s.label}>{title}</Label>
 

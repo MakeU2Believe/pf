@@ -1,25 +1,33 @@
 @import "../../styles/common";
 
 .root {
-  width: 100vw;
-  height: 100vh;
-  display: grid;
-  grid-template-columns:
-    var(--col-1-width, $col-1-width)
-    var(--col-2-width, $col-2-width)
-    var(--col-3-width, $col-3-width)
-    var(--col-4-width, $col-4-width)
-    var(--col-5-width, $col-5-width);
-  grid-template-rows:
-    var(--row-1-height, $row-1-height)
-    var(--row-2-height, $row-2-height)
-    var(--row-3-height, $row-3-height)
-    var(--row-4-height, $row-4-height);
   justify-items: center;
+
+  @include notPhone() {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns:
+      var(--col-1-width, $col-1-width)
+      var(--col-2-width, $col-2-width)
+      var(--col-3-width, $col-3-width)
+      var(--col-4-width, $col-4-width)
+      var(--col-5-width, $col-5-width);
+    grid-template-rows:
+      var(--row-1-height, $row-1-height)
+      var(--row-2-height, $row-2-height)
+      var(--row-3-height, $row-3-height)
+      var(--row-4-height, $row-4-height);
+  }
 
   @include phone() {
     display: flex;
     flex-direction: column;
     padding: 0 10px 10px;
+  }
+
+  @include tablet() {
+    --col-1-width: 20px;
+    --col-5-width: 20px;
   }
 }

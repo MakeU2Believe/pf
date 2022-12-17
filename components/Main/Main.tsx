@@ -69,7 +69,9 @@ export class Main extends React.Component<MainProps, MainState> {
         </Layout>
 
         <ScrollableContent>
-          <Header link={linkProps} fake={true}/>
+          <Header link={linkProps} inContent={true}/>
+
+          <Label className={classNames(s.label, s.mobile)}>work</Label>
 
           <ul className={s.projects}>
             {this.props.projects.map((project) => {
