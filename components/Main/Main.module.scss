@@ -4,9 +4,12 @@
   background: #fff;
   transition: all .3s ease-out;
 
-  &:hover,
-  &:focus-within {
+  &.active {
     background: transparent;
+
+    &.thumbnail {
+      filter: none;
+    }
   }
 
   @include phone() {
@@ -39,11 +42,6 @@
   position: relative;
   aspect-ratio: 2 / 3;
   object-fit: cover;
-
-  &:hover,
-  &:focus-visible {
-    filter: none;
-  }
 }
 
 .label {
