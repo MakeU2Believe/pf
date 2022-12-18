@@ -1,5 +1,5 @@
 import React from 'react';
-import { debounce } from 'throttle-debounce';
+import {debounce} from 'throttle-debounce';
 
 import s from './Main.module.scss';
 import type {Project} from '../../data';
@@ -21,9 +21,7 @@ type RenderedProject = Project & {
 
 export interface MainState {
   renderedProjects: RenderedProject[];
-  lastActiveProject: Project | null;
-  // TODO remove isActive?
-  isActive: boolean;
+  activeProject: string | null;
 }
 
 const projectsWithGroup = (projects: Project[], group: number) => {
@@ -36,8 +34,7 @@ const projectsWithGroup = (projects: Project[], group: number) => {
 export class Main extends React.Component<MainProps, MainState> {
   state: MainState = {
     renderedProjects: projectsWithGroup(this.props.projects, 0),
-    lastActiveProject: null,
-    isActive: false,
+    activeProject: null,
   }
 
   private contentRef = React.createRef<HTMLDivElement>();
@@ -62,7 +59,7 @@ export class Main extends React.Component<MainProps, MainState> {
     const centerLineY = window.innerHeight / 2;
     const marginPx = 6;
 
-    const {slug, group}  = Array.from(this.contentRef.current.querySelectorAll<HTMLLIElement>('[data-slug]'))
+    const {slug, group} = Array.from(this.contentRef.current.querySelectorAll<HTMLLIElement>('[data-slug]'))
       .find((thumbContainer) => {
         const {y, height} = thumbContainer.getBoundingClientRect();
 
@@ -71,9 +68,6 @@ export class Main extends React.Component<MainProps, MainState> {
       ?.dataset || {};
 
     if (slug && group) {
-      const closestProjectToCenter = this.props.projects
-        .find(project => project.slug === slug) || null;
-
       const centralGroup = Number(group);
       const renderedProjects: RenderedProject[] = [];
 
@@ -82,33 +76,34 @@ export class Main extends React.Component<MainProps, MainState> {
       }
 
       this.setState({
-        lastActiveProject: closestProjectToCenter,
-        isActive: true,
+        activeProject: slug,
         renderedProjects,
       });
     }
   });
 
-  private setActiveProject(project: Project) {
-    this.setState({
-      lastActiveProject: project,
-      isActive: true,
-    });
-  }
-
-  private renderProjectDetails({isActive, project}: {isActive: boolean, project: Project | null}) {
+  private renderProjectDetails({isActive, project}: {isActive: boolean, project: Project}) {
     return (
-      <div className={classNames(s.projectDetails, {
+      <div key={project.slug} className={classNames(s.projectDetails, {
         [s.active]: isActive
       })}>
-        <h4 className={s.projectTitle}>{project?.title}</h4>
-        <p className={s.projectDescription}>{project?.type} <br/> ( {project?.year} )</p>
+        <h4 className={s.projectTitle}>
+          <span className={s.animatedText}>{project.title}</span>
+        </h4>
+
+        <p className={s.projectDescription}>
+          <span className={s.animatedText}>{project.type}</span>
+        </p>
+
+        <p className={s.projectDescription}>
+          <span className={s.animatedText}>( {project?.year} )</span>
+        </p>
       </div>
     )
   }
 
   render() {
-    const {isActive, lastActiveProject} = this.state;
+    const {activeProject, renderedProjects} = this.state;
     const linkProps = {href: '/resume', text: 'résumé', mobileText: 'cv'};
 
     return (
@@ -116,10 +111,15 @@ export class Main extends React.Component<MainProps, MainState> {
         <Layout>
           <Header link={linkProps}/>
 
-          {this.renderProjectDetails({
-            isActive,
-            project: lastActiveProject,
-          })}
+          <div className={s.projectDetailsContainer}>
+            {
+              this.props.projects.map((project) =>
+                this.renderProjectDetails({
+                  project,
+                  isActive: project.slug === activeProject,
+                }))
+            }
+          </div>
 
           <Label className={s.label}>work</Label>
 
@@ -132,7 +132,7 @@ export class Main extends React.Component<MainProps, MainState> {
           <Label className={classNames(s.label, s.mobile)}>work</Label>
 
           <ul className={s.projects}>
-            {this.state.renderedProjects.map((project) => {
+            {renderedProjects.map((project) => {
               const {slug, title, thumbnail, group} = project;
 
               return (
@@ -141,9 +141,13 @@ export class Main extends React.Component<MainProps, MainState> {
                   data-group={group}
                   data-slug={slug}
                   className={classNames(s.thumbContainer, {
-                    [s.active]: lastActiveProject?.slug === slug,
+                    [s.active]: activeProject === slug,
                   })}
-                  onMouseEnter={() => this.setActiveProject(project)}
+                  onMouseEnter={() => {
+                    this.setState({
+                      activeProject: slug,
+                    });
+                  }}
                 >
                   <NextLink href={`/project/${slug}`}>
                     <img src={thumbnail} alt={title} className={s.thumbnail}/>

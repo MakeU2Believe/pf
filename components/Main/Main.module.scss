@@ -14,11 +14,10 @@
 
   @include phone() {
     margin-bottom: 36px;
-  }
 
-  @include phone() {
     .projectDetails {
       display: block;
+      margin: 0 auto;
     }
   }
 
@@ -27,6 +26,7 @@
       display: none;
     }
   }
+
 
   a {
     text-decoration: none;
@@ -82,37 +82,58 @@
   }
 }
 
-.projectDetails {
-  transition: all .3s ease-out;
-  opacity: 0;
-  align-self: center;
-  text-align: center;
-  grid-column-start: 2;
-  grid-row: 2 / 5;
-  max-width: 300px;
-
-  &.active {
-    opacity: 1;
-  }
-
+.projectDetailsContainer {
   @include notPhone() {
-    margin-bottom: 24px;
+    grid-column-start: 2;
+    grid-row: 1 / 5;
+    justify-self: stretch;
+    position: relative;
+
+    .projectDetails {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0;
+      overflow: hidden;
+      transition: all .3s ease-out;
+
+      .animatedText {
+        display: block;
+        transform: translateY(-100%);
+        transition: all .7s ease-in-out;
+      }
+
+      &.active {
+        opacity: 1;
+
+        .animatedText {
+          transform: translateY(0);
+        }
+      }
+    }
   }
 
   @include phone() {
     display: none;
-    margin: 0 auto;
   }
+}
+
+.projectDetails {
+  text-align: center;
 }
 
 .projectTitle {
   @include h3();
+  margin-bottom: 12px;
+  overflow: hidden;
 }
 
 .projectDescription {
   font-size: 16px;
   line-height: 1.6;
-  margin-top: 12px;
+  overflow: hidden;
 
   @include phone() {
     margin-top: 4px;
