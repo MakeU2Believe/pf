@@ -1,17 +1,7 @@
-$row-1-height: min-content;
-$row-2-height: min-content;
-$row-3-height: 1fr;
-$row-4-height: 32px;
-
-$col-1-width: minmax(30px, 3fr);;
-$col-2-width: min-content;
-$col-3-width: minmax(180px, 1.45fr);
-$col-4-width: min-content;
-$col-5-width: 30px;
-
 $layer-interactive: 10;
 
 $content-padding-top: 60px;
+$content-padding-top-mobile: 24px;
 
 $color-light-background: #fff;
 $color-light-text: #000;
@@ -41,8 +31,30 @@ $color-dark-text: #fff;
   margin-right: -($value * 1.1); // multiplier for better compensation for elements with big font size
 }
 
+$breakpoint-phone: 768px;
+$breakpoint-tablet: 1024px;
+$breakpoint-desktop-s: 1024px;
+$breakpoint-desktop-m: 1366px;
+$breakpoint-desktop-l: 1920px;
+
 @mixin phone {
-  @media (max-width: 767px) { @content; }
+  @media (max-width: #{$breakpoint-phone - 1px}) { @content; }
+}
+
+@mixin tablet {
+  @media (min-width: #{$breakpoint-phone}) and (max-width: #{$breakpoint-desktop-s - 1px}) { @content; }
+}
+
+@mixin desktopSmall {
+  @media (min-width: #{$breakpoint-desktop-s}) and (max-width: #{$breakpoint-desktop-m - 1px}) { @content; }
+}
+
+@mixin desktop {
+  @media (min-width: #{$breakpoint-desktop-m}) and (max-width: #{$breakpoint-desktop-l - 1px}) { @content; }
+}
+
+@mixin desktopLarge {
+  @media (min-width: #{$breakpoint-desktop-l}) { @content; }
 }
 
 @mixin notPhone {
@@ -51,12 +63,20 @@ $color-dark-text: #fff;
 
 @mixin h2 {
   @include rublena();
-  line-height: 1.05;
   @include letter-spacing(0.08em);
+  line-height: 1.05;
   font-size: 170px;
 
   @include phone() {
-    font-size: 70px;
+    font-size: 22vw;
+  }
+
+  @include tablet() {
+    font-size: 13vw;
+  }
+
+  @include desktopSmall() {
+    font-size: 13vw;
   }
 }
 

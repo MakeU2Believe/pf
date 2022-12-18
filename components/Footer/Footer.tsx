@@ -14,7 +14,7 @@ export class Footer extends React.Component<FooterProps> {
       <>
         <div className={s.contacts}>
           <a href={`tel:${phone.replaceAll(' ', '')}`}>{phone}</a>
-          {` `}|{` `}
+          <span className={s.divider}>{` `}|{` `}</span>
           <a href={`mailto:${email}`}>{email}</a>
         </div>
         <div className={s.copyright}>

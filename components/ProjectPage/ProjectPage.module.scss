@@ -23,14 +23,25 @@
 
   @include phone() {
     font-size: 72px;
+    position: fixed;
+    right: 10px;
   }
 }
 
 .content {
+<<<<<<< HEAD
   --row-1-height: 192px;
   --row-2-height: 40px;
   --row-3-height: min-content;
   --row-4-height: 1fr;
+=======
+  @include notPhone() {
+    --row-1-height: 150px;
+    --row-2-height: 40px;
+    --row-3-height: min-content;
+    --row-4-height: 1fr;
+  }
+>>>>>>> 7a5e597119c8ad49c142cdee31ab2b4cfeed05f2
 
   @include phone() {
     padding-top: 120px;
@@ -48,7 +59,6 @@
 .projectDetails {
   font-size: 16px;
   line-height: 1.8;
-  font-feature-settings: 'onum' on;
   grid-column-start: 2;
   text-align: center;
 
@@ -72,12 +82,16 @@
 }
 
 .media {
-  padding: 54px 0 156px;
+  padding: 54px 0 470px;
   grid-column: 2 / 5;
   grid-row-start: 4;
 
   @include phone() {
-    padding: 36px 0 280px;
+    padding: 36px 0 60px;
+  }
+
+  @include tablet() {
+    padding: 36px 0 200px;
   }
 }
 
@@ -110,4 +124,46 @@
   @include phone() {
     display: none;
   }
+}
+
+.nextProjectTitle,
+.nextProjectLink {
+  margin-top: -238px;
+
+  @include tablet() {
+    margin-top: -120px;
+  }
+
+  @include notPhone() {
+    grid-row-start: 5;
+  }
+}
+
+.nextProjectTitle {
+  grid-column-start: 2;
+  font-size: 16px;
+
+  @include phone() {
+    display: none;
+  }
+}
+
+.nextProjectLink {
+  grid-column-start: 4;
+  justify-self: flex-end;
+  text-align: right;
+  font-size: 20px;
+  line-height: 1;
+  @include letter-spacing(0.08em);
+  text-decoration: none;
+
+  @include phone() {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 60px;
+  }
+}
+
+.nextProjectValue {
+  @include rublena();
 }

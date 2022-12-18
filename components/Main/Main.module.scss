@@ -4,13 +4,22 @@
   background: #fff;
   transition: all .3s ease-out;
 
-  &:hover,
-  &:focus-within {
+  &.active {
     background: transparent;
+
+    &.thumbnail {
+      filter: none;
+    }
   }
 
   @include phone() {
     margin-bottom: 36px;
+  }
+
+  @include phone() {
+    .projectDetails {
+      display: block;
+    }
   }
 
   @include notPhone() {
@@ -33,11 +42,6 @@
   position: relative;
   aspect-ratio: 2 / 3;
   object-fit: cover;
-
-  &:hover,
-  &:focus-visible {
-    filter: none;
-  }
 }
 
 .label {
@@ -46,8 +50,19 @@
   justify-self: flex-end;
   grid-column-start: 4;
 
-  @include phone() {
-    display: none !important;
+  &.mobile {
+    padding-top: $content-padding-top-mobile;
+    margin-left: auto;
+
+    @include notPhone() {
+      display: none !important;
+    }
+  }
+
+  &:not(.mobile) {
+    @include phone() {
+      display: none !important;
+    }
   }
 }
 
@@ -63,7 +78,7 @@
   }
 
   @include phone() {
-    padding: 240px 0 100px;
+    padding: 0 0 100px;
   }
 }
 
@@ -85,6 +100,7 @@
   }
 
   @include phone() {
+    display: none;
     margin: 0 auto;
   }
 }
