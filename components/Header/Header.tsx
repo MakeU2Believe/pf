@@ -3,6 +3,7 @@ import React from 'react';
 import s from './Header.module.scss';
 import classNames from 'classnames';
 import NextLink from 'next/link';
+import {mainInfo} from '../../data';
 
 export type HeaderProps = {
   link?: {
@@ -39,7 +40,7 @@ export class Header extends React.Component<HeaderProps> {
         <h3 className={classNames(s.subtitle, {
           [s.inContent]: inContent,
           [s.hideMobile]: hideMobile,
-        })}>art director, visual designer, tutor, car lover.</h3>
+        })}>{mainInfo.subtitle}</h3>
       </>
     );
   }

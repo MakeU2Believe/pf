@@ -1,5 +1,5 @@
 import {Main, PageHead} from '../components';
-import {Project, projects} from '../data';
+import {mainInfo, Project, projects} from '../data';
 
 // This function gets called at build time
 export async function getStaticProps() {
@@ -14,8 +14,8 @@ export default function Index({projects}: {projects: Project[]}) {
   return (
     <>
       <PageHead
-        title="Nick Deineko"
-        description=""
+        title="nick deineko"
+        description={mainInfo.subtitle}
       />
 
       <Main projects={projects}/>

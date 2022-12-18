@@ -17,14 +17,20 @@ export const getStaticProps: GetStaticProps = ({params}) => {
   }
 }
 
+// https://stackoverflow.com/a/5454303
+const getDescription = (fullBrief: string, maxLength = 160) => {
+  if (fullBrief.length <= maxLength) return fullBrief;
+  return fullBrief.substr(0, fullBrief.lastIndexOf('.', maxLength) + 1);
+}
+
 export default function ProjectPage({project}: {project: Project}) {
-  const {title, type, year} = project;
+  const {title, brief} = project;
 
   return (
     <>
       <PageHead
-        title={`Nick Deineko | ${title}`}
-        description={`${type} | ${year}`}
+        title={`nick deineko | ${title}`}
+        description={getDescription(brief)}
       />
 
       <ProjectPageMarkup {...project}/>
