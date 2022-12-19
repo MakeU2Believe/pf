@@ -121,7 +121,7 @@
 
 .nextProjectTitle,
 .nextProjectLink {
-  margin-top: -238px;
+  margin-top: -146px;
 
   @include notPhone() {
     grid-row-start: 5;
@@ -150,7 +150,7 @@
   justify-self: flex-end;
   text-align: right;
   font-size: 14px;
-  line-height: 1;
+  line-height: 1.5;
   @include letter-spacing(0.08em);
   text-decoration: none;
 
