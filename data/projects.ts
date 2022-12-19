@@ -99,7 +99,7 @@ const rawProjects: RawProject[] = [
   },
   {
     slug: 'soviet-modernism',
-    title: 'soviet modernism, brutalism, post-modernism',
+    title: 'soviet modernism',
     year: 2019,
     type: 'editorial',
     brief: 'Olexyi Bykov’s photographic homage to works of soviet Ukrainian architects. It displays modernist' +
