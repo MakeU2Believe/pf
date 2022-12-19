@@ -75,7 +75,7 @@
 }
 
 .media {
-  padding: 0 0 240px;
+  padding: 0 0 236px;
   grid-column: 2 / 5;
   grid-row-start: 4;
 
@@ -150,7 +150,7 @@
   justify-self: flex-end;
   text-align: right;
   font-size: 14px;
-  line-height: 1.5;
+  line-height: 2.1;
   @include letter-spacing(0.08em);
   text-decoration: none;
 
