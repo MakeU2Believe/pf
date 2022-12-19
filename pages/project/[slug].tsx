@@ -29,7 +29,7 @@ export default function ProjectPage({project}: {project: Project}) {
   return (
     <>
       <PageHead
-        title={`nick deineko | ${title}`}
+        title={`nick deineko — ${title}`}
         description={getDescription(brief)}
       />
 

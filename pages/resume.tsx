@@ -5,7 +5,7 @@ export default function Resume() {
   return (
     <>
       <PageHead
-        title="nick deineko | résumé"
+        title="nick deineko — résumé"
         description={mainInfo.subtitle}
       />
 
