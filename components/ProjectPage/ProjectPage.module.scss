@@ -30,8 +30,8 @@
 
 .content {
   @include notPhone() {
-    --row-1-height: 185px;
-    --row-2-height: 24px;
+    --row-1-height: 152px;
+    --row-2-height: 32px;
     --row-3-height: min-content;
     --row-4-height: 1fr;
   }
