@@ -71,7 +71,7 @@ export class Main extends React.Component<MainProps, MainState> {
       const centralGroup = Number(group);
       const renderedProjects: RenderedProject[] = [];
 
-      for (let i = centralGroup - 2; i < centralGroup + 2; i++) {
+      for (let i = centralGroup - 5; i <= centralGroup + 5; i++) {
         renderedProjects.push(...projectsWithGroup(this.props.projects, i));
       }
 
