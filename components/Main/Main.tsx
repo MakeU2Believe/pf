@@ -56,7 +56,7 @@ export class Main extends React.Component<MainProps, MainState> {
       return;
     }
 
-    const centerLineY = window.innerHeight / 2;
+    const centerLineY = (window.innerHeight / 2) * 1.2; // prefer items below line then above
     const marginPx = 6;
 
     const {slug, group} = Array.from(this.contentRef.current.querySelectorAll<HTMLLIElement>('[data-slug]'))
