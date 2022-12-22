@@ -37,7 +37,7 @@ export class Header extends React.Component<HeaderProps> {
           )
         }
 
-        <h3 className={classNames(s.subtitle, {
+        <h3 id="subtitle" className={classNames(s.subtitle, {
           [s.inContent]: inContent,
           [s.hideMobile]: hideMobile,
         })}>{mainInfo.subtitle}</h3>

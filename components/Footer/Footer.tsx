@@ -17,7 +17,7 @@ export class Footer extends React.Component<FooterProps> {
           <span className={s.divider}>{` `}|{` `}</span>
           <a href={`mailto:${email}`}>{email}</a>
         </div>
-        <div className={s.copyright}>
+        <div className={s.copyright} id="copyright">
           typefaces: rublena © ktf, mantonico © mint type
         </div>
       </>

@@ -47,25 +47,21 @@ export class Main extends React.Component<MainProps, MainState> {
 
       setTimeout(() => {
         this.isReadyToListenScroll = true;
-      }, 300);
+      }, 100);
     }
   }
 
-  private onContentScroll = throttle(100, () => {
+  private onContentScroll = () => {
+    this.updateInfiniteGallery();
+    this.updateActiveProject();
+  }
+
+  private updateInfiniteGallery = throttle(100, () => {
     if (!this.contentRef.current || !this.isReadyToListenScroll) {
       return;
     }
 
-    const centerLineY = (window.innerHeight / 2) * 1.2; // prefer items below line then above
-    const marginPx = 6;
-
-    const {slug, group} = Array.from(this.contentRef.current.querySelectorAll<HTMLLIElement>('[data-slug]'))
-      .find((thumbContainer) => {
-        const {y, height} = thumbContainer.getBoundingClientRect();
-
-        return centerLineY > (y - marginPx) && centerLineY < (y + height + marginPx);
-      })
-      ?.dataset || {};
+    const {slug, group} = this.getActiveThumb();
 
     if (slug && group) {
       const centralGroup = Number(group);
@@ -78,14 +74,55 @@ export class Main extends React.Component<MainProps, MainState> {
       this.setState({
         renderedProjects,
       });
-
-      this.updateActiveProject(slug);
     }
   });
 
-  private updateActiveProject = debounce(200, (activeProject: string) => {
-    this.setState({ activeProject });
-  })
+  private updateActiveProject = debounce(300, () => {
+    const {slug} = this.getActiveThumb();
+
+    if (slug) {
+      this.setState({ activeProject: slug });
+    }
+  });
+
+  private getActiveThumb = () => {
+    if (!this.contentRef.current) {
+      return {};
+    }
+
+    const {y: subtitleY, height: subtitleHeight} = document
+      .querySelector('#subtitle')
+      ?.getBoundingClientRect() || {};
+
+    const {y: copyrightY} = document
+      .querySelector('#copyright')
+      ?.getBoundingClientRect() || {};
+
+    if (!subtitleY || !subtitleHeight || !copyrightY) {
+      throw new Error('Cannot calculate middle');
+    }
+
+    const centerLineY = (copyrightY + subtitleHeight + subtitleHeight) / 2;
+    const marginPx = 6;
+
+    const items = Array.from(this.contentRef.current.querySelectorAll<HTMLLIElement>('[data-slug]'));
+    const itemsBetweenContent = items
+      .filter((thumbContainer) => {
+        const {y, height} = thumbContainer.getBoundingClientRect();
+
+        return y > copyrightY + subtitleHeight && copyrightY < (y + height);
+      });
+
+    if (itemsBetweenContent.length === 1) {
+      return itemsBetweenContent[0]?.dataset || {};
+    } else {
+      return items.find((thumbContainer) => {
+        const {y, height} = thumbContainer.getBoundingClientRect();
+
+        return centerLineY > (y - marginPx) && centerLineY < (y + height + marginPx);
+      })?.dataset || {}
+    }
+  }
 
   private renderProjectDetails({isActive, project}: {isActive: boolean, project: Project}) {
     return (
