@@ -1,5 +1,5 @@
 import React from 'react';
-import {debounce} from 'throttle-debounce';
+import {debounce, throttle} from 'throttle-debounce';
 
 import s from './Main.module.scss';
 import type {Project} from '../../data';
@@ -47,11 +47,11 @@ export class Main extends React.Component<MainProps, MainState> {
 
       setTimeout(() => {
         this.isReadyToListenScroll = true;
-      }, 1000);
+      }, 300);
     }
   }
 
-  private onContentScroll = debounce(200, () => {
+  private onContentScroll = throttle(100, () => {
     if (!this.contentRef.current || !this.isReadyToListenScroll) {
       return;
     }
@@ -76,11 +76,16 @@ export class Main extends React.Component<MainProps, MainState> {
       }
 
       this.setState({
-        activeProject: slug,
         renderedProjects,
       });
+
+      this.updateActiveProject(slug);
     }
   });
+
+  private updateActiveProject = debounce(200, (activeProject: string) => {
+    this.setState({ activeProject });
+  })
 
   private renderProjectDetails({isActive, project}: {isActive: boolean, project: Project}) {
     return (
