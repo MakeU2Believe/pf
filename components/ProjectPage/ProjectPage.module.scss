@@ -92,15 +92,24 @@
   margin-top: 12px;
   display: flex;
 
+  &.oneItem {
+    img, video {
+      aspect-ratio: 1920 / 1080;
+    }
+  }
+
   &.twoItems {
     $gap: 6px;
     margin-left: -$gap;
     margin-right: -$gap;
 
-    & > img {
+    img, video {
+      aspect-ratio: 1920 / 2280;
+    }
+
+    & > * {
       flex: 0 0 50%;
       padding: 0 $gap;
-      aspect-ratio: 1920 / 2280;
 
       @include phone() {
         flex-grow: 1;
@@ -111,7 +120,8 @@
   video,
   img {
     max-width: 100%;
-    aspect-ratio: 1920 / 1080;
+    max-height: 100%;
+    object-fit: cover;
   }
 }
 

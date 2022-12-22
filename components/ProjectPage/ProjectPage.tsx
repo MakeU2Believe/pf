@@ -50,9 +50,7 @@ export class ProjectPage extends React.Component<Project> {
                 return (
                   <div
                     key={i}
-                    className={classNames(s.row, {
-                      [s.twoItems]: Array.isArray(row) && row.length === 2
-                    })}
+                    className={classNames(s.row, Array.isArray(row) && row.length === 2 ? s.twoItems : s.oneItem)}
                   >
                     {
                       Array.isArray(row)
