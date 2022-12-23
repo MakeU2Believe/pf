@@ -52,15 +52,13 @@ export class Main extends React.Component<MainProps, MainState> {
   }
 
   private onContentScroll = () => {
-    this.updateInfiniteGallery();
-    this.updateActiveProject();
+    if (this.isReadyToListenScroll) {
+      this.updateInfiniteGallery();
+      this.updateActiveProject();
+    }
   }
 
   private updateInfiniteGallery = throttle(100, () => {
-    if (!this.contentRef.current || !this.isReadyToListenScroll) {
-      return;
-    }
-
     const {slug, group} = this.getActiveThumb();
 
     if (slug && group) {
