@@ -183,11 +183,6 @@ export class Main extends React.Component<MainProps, MainState> {
                   className={classNames(s.thumbContainer, {
                     [s.active]: activeProject === slug,
                   })}
-                  onMouseEnter={() => {
-                    this.setState({
-                      activeProject: slug,
-                    });
-                  }}
                 >
                   <NextLink href={`/project/${slug}`}>
                     <img src={thumbnail} alt={title} className={s.thumbnail}/>
