@@ -58,6 +58,14 @@
 .toggle {
   @include notPhone() {
     @include h3();
+    align-self: start;
+    transition: all 1s ease-in-out;
+
+    &:hover {
+      transition: all 0.3s ease-in-out;
+      background-color: var(--page-text-color, $color-light-background);
+      color: var(--page-bg-color, $color-light-text);
+    }
   }
 
   @include phone() {
