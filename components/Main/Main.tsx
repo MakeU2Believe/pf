@@ -144,7 +144,7 @@ export class Main extends React.Component<MainProps, MainState> {
 
   render() {
     const {activeProject, renderedProjects} = this.state;
-    const linkProps = {href: '/resume', text: 'résumé', mobileText: 'cv'};
+    const linkProps = {href: '/resume', text: '_résumé_', mobileText: 'cv'};
 
     return (
       <>

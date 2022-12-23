@@ -101,12 +101,12 @@
       transform: translateY(-50%);
       opacity: 0;
       overflow: hidden;
-      transition: all .3s ease-out;
+      transition: all .2s ease-out;
 
       .animatedText {
         display: block;
         transform: translateY(-100%);
-        transition: all .7s ease-in-out;
+        transition: all .6s ease-out;
       }
 
       &.active {
