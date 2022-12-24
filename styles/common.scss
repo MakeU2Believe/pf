@@ -1,7 +1,7 @@
 $layer-interactive: 10;
 
 $content-padding-top: 60px;
-$content-padding-top-mobile: 24px;
+$content-padding-top-mobile: 36px;
 
 $color-light-background: #fff;
 $color-light-text: #000;
@@ -69,6 +69,7 @@ $breakpoint-desktop-l: 1920px;
 
   @include phone() {
     font-size: 22vw;
+    line-height: 0.85;
   }
 
   @include tablet() {
