@@ -20,6 +20,7 @@ type RenderedProject = Project & {
 }
 
 export interface MainState {
+  isCarouselReady: boolean;
   renderedProjects: RenderedProject[];
   activeProject: string | null;
 }
@@ -33,6 +34,7 @@ const projectsWithGroup = (projects: Project[], group: number) => {
 
 export class Main extends React.Component<MainProps, MainState> {
   state: MainState = {
+    isCarouselReady: false,
     renderedProjects: projectsWithGroup(this.props.projects, 0),
     activeProject: null,
   }
@@ -48,6 +50,7 @@ export class Main extends React.Component<MainProps, MainState> {
 
       setTimeout(() => {
         this.isReadyToListenScroll = true;
+        this.setState({isCarouselReady: true});
       }, 100);
     }
   }
@@ -148,7 +151,7 @@ export class Main extends React.Component<MainProps, MainState> {
   }
 
   render() {
-    const {activeProject, renderedProjects} = this.state;
+    const {isCarouselReady, activeProject, renderedProjects} = this.state;
     const linkProps = {href: '/resume', text: '_résumé_', mobileText: 'cv'};
 
     return (
@@ -176,7 +179,7 @@ export class Main extends React.Component<MainProps, MainState> {
 
           <Label className={classNames(s.label, s.mobile)}>work</Label>
 
-          <ul className={s.projects} ref={this.projectListRef}>
+          <ul className={classNames(s.projects, {[s.ready]: isCarouselReady})} ref={this.projectListRef}>
             {renderedProjects.map((project) => {
               const {slug, title, thumbnail, group} = project;
 

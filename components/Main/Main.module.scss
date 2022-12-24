@@ -41,14 +41,29 @@
 }
 
 .thumbnail {
-  max-width: 232px;
+  $width: 232px;
   margin: 0 auto;
   filter: grayscale(1);
-  transition: all .3s ease-out;
+  transition: all 0.4s ease-out;
   mix-blend-mode: difference;
   position: relative;
   aspect-ratio: 2 / 3;
   object-fit: cover;
+
+  @include notPhone() {
+    width: 1px;
+    opacity: 0;
+    height: 348px;
+
+    .ready & {
+      opacity: 1;
+      width: 232px;
+    }
+  }
+
+  @include phone() {
+    max-width: $width;
+  }
 }
 
 .label {
