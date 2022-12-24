@@ -77,7 +77,7 @@ export class ProjectPage extends React.Component<Project> {
           </span>
 
           <Link
-            href={`/project/${next.slug}`}
+            href={`/${next.slug}`}
             className={s.nextProjectLink}
           >
             <span className={s.nextProjectValue}>{next.title}</span> →

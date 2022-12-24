@@ -184,7 +184,7 @@ export class Main extends React.Component<MainProps, MainState> {
                     [s.active]: activeProject === slug,
                   })}
                 >
-                  <NextLink href={`/project/${slug}`}>
+                  <NextLink href={`/${slug}`}>
                     <img src={thumbnail} alt={title} className={s.thumbnail}/>
 
                     {this.renderProjectDetails({

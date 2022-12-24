@@ -1,10 +1,10 @@
-import {ProjectPage as ProjectPageMarkup, PageHead} from '../../components';
-import {Project, projects} from '../../data';
+import {ProjectPage as ProjectPageMarkup, PageHead} from '..//components';
+import {Project, projects} from '../data';
 import {GetStaticPaths, GetStaticProps} from 'next';
 
 export const getStaticPaths: GetStaticPaths = () => {
   return {
-    paths: projects.map(({slug}) => ({params: {slug}})),
+    paths: projects.map(({slug}) => ({params: {project: slug}})),
     fallback: false,
   }
 }
@@ -12,7 +12,7 @@ export const getStaticPaths: GetStaticPaths = () => {
 export const getStaticProps: GetStaticProps = ({params}) => {
   return {
     props: {
-      project: projects.find(({slug}) => slug === params?.slug) || {}
+      project: projects.find(({slug}) => slug === params?.project) || {}
     },
   }
 }
