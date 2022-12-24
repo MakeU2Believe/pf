@@ -38,6 +38,7 @@ export class Main extends React.Component<MainProps, MainState> {
   }
 
   private contentRef = React.createRef<HTMLDivElement>();
+  private projectListRef = React.createRef<HTMLUListElement>();
   private isMobile = () => window.matchMedia('(max-width: 767px)').matches;
   private isReadyToListenScroll = false;
 
@@ -76,6 +77,10 @@ export class Main extends React.Component<MainProps, MainState> {
   });
 
   private updateActiveProject = debounce(300, () => {
+    if (this.projectListRef?.current?.matches(':hover')) {
+      return;
+    }
+
     const {slug} = this.getActiveThumb();
 
     if (slug) {
@@ -171,7 +176,7 @@ export class Main extends React.Component<MainProps, MainState> {
 
           <Label className={classNames(s.label, s.mobile)}>work</Label>
 
-          <ul className={s.projects}>
+          <ul className={s.projects} ref={this.projectListRef}>
             {renderedProjects.map((project) => {
               const {slug, title, thumbnail, group} = project;
 
@@ -189,7 +194,7 @@ export class Main extends React.Component<MainProps, MainState> {
                     });
                   }}
                 >
-                  <NextLink href={`/${slug}`}>
+                  <NextLink href={`/${slug}`} className={s.thumbLink}>
                     <img src={thumbnail} alt={title} className={s.thumbnail}/>
 
                     {this.renderProjectDetails({

@@ -29,16 +29,20 @@
       display: none;
     }
   }
+}
 
+.thumbLink {
+  text-decoration: none;
 
-  a {
-    text-decoration: none;
+  @include notPhone() {
+    display: block;
+    padding: 3px 0;
   }
 }
 
 .thumbnail {
   max-width: 232px;
-  margin: 6px auto;
+  margin: 0 auto;
   filter: grayscale(1);
   transition: all .3s ease-out;
   mix-blend-mode: difference;
