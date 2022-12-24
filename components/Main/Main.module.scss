@@ -37,7 +37,7 @@
 }
 
 .thumbnail {
-  max-width: 210px;
+  max-width: 232px;
   margin: 6px auto;
   filter: grayscale(1);
   transition: all .3s ease-out;
@@ -130,7 +130,7 @@
 
 .projectTitle {
   @include h3();
-  margin-bottom: 5px;
+  margin-bottom: 6px;
   margin-top: 12px;
   overflow: hidden;
 }
@@ -142,5 +142,6 @@
 
   @include phone() {
     margin-top: 0px;
+    line-height: 1.4;
   }
 }

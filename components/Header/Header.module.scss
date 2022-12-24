@@ -71,10 +71,10 @@
 
   @include phone() {
     position: fixed;
-    bottom: 56px;
-    right: 10px;
-    width: 51px;
-    height: 51px;
+    bottom: 44px;
+    right: 12px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     background-color: var(--page-text-color, $color-light-text);
     font-size: 0;
@@ -83,11 +83,11 @@
     &:after {
       content: attr(data-title);
       position: absolute;
-      top: 15px;
-      left: 13px;
+      top: 16px;
+      left: 15px;
       @include rublena();
       @include letter-spacing(0.1em);
-      font-size: 20px;
+      font-size: 14px;
       line-height: 1;
       color: var(--page-bg-color, $color-light-background);
     }
