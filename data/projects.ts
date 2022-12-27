@@ -145,7 +145,7 @@ export const projects: Project[] = rawProjects.map((project, i) => {
 
   return {
     ...project,
-    thumbnail: `/${slug}/thumb.jpg`,
+    thumbnail: `/${slug}/thumb.webp`,
     media: media.map((row) => {
       return Array.isArray(row)
         ? row.map((rowItem) => rowItem ? `/${slug}/${rowItem}` : rowItem)
