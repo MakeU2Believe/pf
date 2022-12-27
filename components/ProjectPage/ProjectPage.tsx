@@ -9,9 +9,14 @@ import Link from 'next/link';
 import {Label} from '../Label';
 import {Header} from '../Header';
 import classNames from 'classnames';
+import {setProjectContext} from '../setProjectContext';
 
 export class ProjectPage extends React.Component<Project> {
   private contentRef = React.createRef<HTMLDivElement>();
+
+  componentDidMount() {
+    setProjectContext(this.props.slug);
+  }
 
   componentDidUpdate() {
     if (this.contentRef.current) {

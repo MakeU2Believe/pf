@@ -1,8 +1,10 @@
 @import "../../styles/common";
 
 .thumbContainer {
+  width: 232px;
   background: #fff;
-  transition: all .3s ease-in-out;
+  transition: all 0.7s cubic-bezier(0.65, 0.2, 0.2, 0.97),
+    background .3s ease-in-out;
   transform: translate3d(0, 0, 0);
 
   &.active {
@@ -14,12 +16,8 @@
   }
 
   @include phone() {
-    margin-bottom: 44px;
-
-    .projectDetails {
-      display: block;
-      margin: 0 auto;
-    }
+    margin: 0 auto;
+    padding-bottom: 44px;
   }
 
   @include notPhone() {
@@ -41,33 +39,16 @@
 }
 
 .thumbnail {
-  $width: 232px;
+  width: 100%;
+  height: 348px;
   margin: 0 auto;
   filter: grayscale(1);
   transition-property: all;
-  transition-duration: 0.7s;
-  transition-timing-function: cubic-bezier(0.65, 0.2, 0.2, 0.97);
+  transition-duration: 300ms;
+  transition-timing-function:  ease-in-out;
   mix-blend-mode: difference;
   position: relative;
-  aspect-ratio: 2 / 3;
   object-fit: cover;
-
-  @include notPhone() {
-    width: 1px;
-    opacity: 0;
-    height: 348px;
-
-    .ready & {
-      opacity: 1;
-      width: 232px;
-      transition-duration: 300ms;
-      transition-timing-function: ease-in-out;
-    }
-  }
-
-  @include phone() {
-    max-width: $width;
-  }
 }
 
 .label {
@@ -101,10 +82,24 @@
 
   @include notPhone() {
     padding: 64px 0;
+
+    &:not(.ready) .thumbContainer {
+      opacity: 0;
+      width: 1px;
+    }
   }
 
   @include phone() {
     padding: 0 0 72px;
+
+    .thumbContainer {
+      transition: all 0.5s ease-out;
+    }
+
+    &:not(.ready) .thumbContainer {
+      opacity: 0;
+      transform: translate3d(0, 20%, 0);
+    }
   }
 }
 
