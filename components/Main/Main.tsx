@@ -51,7 +51,7 @@ export class Main extends React.Component<MainProps, MainState> {
       setTimeout(() => {
         this.isReadyToListenScroll = true;
         this.setState({isCarouselReady: true});
-      }, 100);
+      }, 700);
     }
   }
 
