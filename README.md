@@ -58,6 +58,20 @@ Main structure:
 - `mp4` has any size. Just pick something in the range 1560-3120px
 
 ### How to add media
+
+_Option 1_: use online tools for convert and put into `public` folder
+
+E.g. you can use [Squoosh](https://squoosh.app/) to convert any image to Webp. 
+I generated `thumb.webp` using this tool. You can use similar tools for generating projects media
+
+_Option 2_: run script located in project
+
+Prerequisites – install required libraries:
+```bash
+brew install cweb ffmpeg
+```
+
+Steps to add/update project's media:
 - Make sure `public/$projectName` exists before start
 - Create folder `public-src` in the root
 - Put original media in this folder. Original items should have `img` and `mp4` extensions. Items should be grouped by `$projectName`.
