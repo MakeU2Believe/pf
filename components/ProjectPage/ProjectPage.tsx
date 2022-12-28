@@ -30,7 +30,7 @@ export class ProjectPage extends React.Component<Project> {
     return (
       <div className={s.root}>
         <Layout className={s.pageLayout}>
-          <Header inContent={true} hideMobile={true} />
+          <Header inContent={true} hideMobile={true}/>
 
           <Link href="/" className={s.initials}>
             nd
@@ -40,7 +40,7 @@ export class ProjectPage extends React.Component<Project> {
         </Layout>
 
         <ScrollableContent className={s.content} rootRef={this.contentRef}>
-          <Header inContent={true} hideMobile={true} />
+          <Header inContent={true} hideMobile={true}/>
 
           <Label className={s.label}>{title}</Label>
 
@@ -102,6 +102,23 @@ export class ProjectPage extends React.Component<Project> {
         return (
           <img key={src} src={src} alt=""/>
         );
+      case src.endsWith('webp'):
+        const [fileName] = src.split('.');
+
+        const imagesSizes = {
+          L: 3120,
+          M: 1560,
+          S: 780,
+        }
+
+        const srcSet = Object.entries(imagesSizes).map(([type, width]) => {
+          return `${fileName}-${type}.webp ${width}w`
+        }).join(',');
+
+        return (
+          <img srcSet={srcSet} src={`${fileName}-M.webp`} alt="" />
+        )
+
       default:
         return 'UNRECOGNIZED FILE TYPE 😭'
     }

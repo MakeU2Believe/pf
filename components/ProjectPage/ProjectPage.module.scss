@@ -97,7 +97,7 @@
 
   &.oneItem {
     img, video {
-      aspect-ratio: 1920 / 1080;
+      aspect-ratio: 3 / 2;
     }
   }
 
@@ -107,7 +107,7 @@
     margin-right: -$gap;
 
     img, video {
-      aspect-ratio: 1920 / 2280;
+      aspect-ratio: 2 / 3;
     }
 
     & > * {
