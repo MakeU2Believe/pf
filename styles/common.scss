@@ -58,7 +58,7 @@ $breakpoint-desktop-l: 1920px;
 }
 
 @mixin notPhone {
-  @media (min-width: 768px) { @content; }
+  @media (min-width: $breakpoint-phone) { @content; }
 }
 
 @mixin h2 {

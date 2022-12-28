@@ -24,7 +24,7 @@ fs.readdirSync(srcFolder).forEach(projectFolder => {
       case 'jpg':
         return jpgToWebP(params);
       case 'mp4':
-        return mp4ToWebM(params);
+        return mp4Compression(params);
       default:
         console.error('Unrecognized file type: ', fullFileName)
     }
@@ -40,7 +40,7 @@ function jpgToWebP({ projectFolder, fileName }) {
 }
 
 
-function mp4ToWebM({ projectFolder, fileName }) {
+function mp4Compression({ projectFolder, fileName }) {
   runCommand(`ffmpeg -an -y -i "${srcFolder}${projectFolder}/${fileName}.mp4" -vcodec libx264 -pix_fmt yuv420p -profile:v baseline -level 3 "${outFolder}${projectFolder}/${fileName}.mp4"`)
 
   // TODO try webm
