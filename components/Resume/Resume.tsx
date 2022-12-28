@@ -23,7 +23,7 @@ export class Resume extends React.Component<ResumeProps> {
         </Layout>
 
         <ScrollableContent>
-          <Header link={linkProps} inContent={true}/>
+          <Header link={linkProps} inContent={true} showInitials={true}/>
 
           <div className={s.content}>
             <Label>career</Label>

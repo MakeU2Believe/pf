@@ -3,7 +3,9 @@ const {exec} = require('child_process');
 
 const srcFolder = './public-src/';
 const outFolder = './public/';
-const imagesSizes = {
+
+// sizes here should be synced with constant in ProjectPage.tsx
+const projectImagesSizes = {
   L: 3120,
   M: 1560,
   S: 780,
@@ -30,7 +32,7 @@ fs.readdirSync(srcFolder).forEach(projectFolder => {
 });
 
 function jpgToWebP({ projectFolder, fileName }) {
-  Object.entries(imagesSizes).forEach(([type, width]) => {
+  Object.entries(projectImagesSizes).forEach(([type, width]) => {
     runCommand(
       `cwebp -q 90 -resize ${width} 0 "${srcFolder}${projectFolder}/${fileName}.jpg" -o "${outFolder}${projectFolder}/${fileName}-${type}.webp"`
     );

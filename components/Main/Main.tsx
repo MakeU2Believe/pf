@@ -12,6 +12,7 @@ import NextLink from 'next/link';
 import classNames from 'classnames';
 import {getProjectContext} from '../setProjectContext';
 import {projects} from '../../data';
+import {isMobile} from '../isMobile';
 
 export interface MainProps {
   projects: Project[];
@@ -43,16 +44,15 @@ export class Main extends React.Component<MainProps, MainState> {
 
   private contentRef = React.createRef<HTMLDivElement>();
   private projectListRef = React.createRef<HTMLUListElement>();
-  private isMobile = () => window.matchMedia('(max-width: 767px)').matches;
   private onContentScroll = () => {};
 
   componentDidMount() {
     const projectContext = getProjectContext();
 
-    if (this.isMobile()) {
-      const element = document.querySelector<HTMLLIElement>(`[data-slug="${projectContext}"]`);
-
+    if (isMobile()) {
       setTimeout(() => {
+        const element = document.querySelector<HTMLLIElement>(`[data-slug="${projectContext}"]`);
+
         if (element) {
           (element as any).scrollIntoViewIfNeeded
             ? (element as any).scrollIntoViewIfNeeded()
@@ -246,7 +246,7 @@ export class Main extends React.Component<MainProps, MainState> {
         </Layout>
 
         <ScrollableContent rootRef={this.contentRef} onScroll={this.onContentScroll}>
-          <Header link={linkProps} inContent={true}/>
+          <Header link={linkProps} inContent={true} showInitials={true}/>
 
           <Label className={classNames(s.label, s.mobile)}>work</Label>
 

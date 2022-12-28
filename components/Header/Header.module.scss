@@ -93,3 +93,15 @@
     }
   }
 }
+
+.initials {
+  transition: transform 300ms ease-in-out;
+
+  &:not(.showInitials) {
+    transform: translateY(-50px);
+  }
+
+  @include notPhone() {
+    display: none !important;
+  }
+}

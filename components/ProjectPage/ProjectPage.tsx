@@ -10,6 +10,14 @@ import {Label} from '../Label';
 import {Header} from '../Header';
 import classNames from 'classnames';
 import {setProjectContext} from '../setProjectContext';
+import {Initials} from '../Initials';
+
+// sizes here should be synced with constant in prepare-images.js
+const projectImagesSizes = {
+  L: 3120,
+  M: 1560,
+  S: 780,
+}
 
 export class ProjectPage extends React.Component<Project> {
   private contentRef = React.createRef<HTMLDivElement>();
@@ -32,9 +40,7 @@ export class ProjectPage extends React.Component<Project> {
         <Layout className={s.pageLayout}>
           <Header inContent={true} hideMobile={true}/>
 
-          <Link href="/" className={s.initials}>
-            nd
-          </Link>
+          <Initials />
 
           <Footer/>
         </Layout>
@@ -105,13 +111,7 @@ export class ProjectPage extends React.Component<Project> {
       case src.endsWith('webp'):
         const [fileName] = src.split('.');
 
-        const imagesSizes = {
-          L: 3120,
-          M: 1560,
-          S: 780,
-        }
-
-        const srcSet = Object.entries(imagesSizes).map(([type, width]) => {
+        const srcSet = Object.entries(projectImagesSizes).map(([type, width]) => {
           return `${fileName}-${type}.webp ${width}w`
         }).join(',');
 

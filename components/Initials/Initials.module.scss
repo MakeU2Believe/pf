@@ -1,0 +1,24 @@
+@import "../../styles/common";
+
+.initials {
+  @include rublena();
+  position: relative;
+  grid-row-start: 1;
+  grid-column-start: 4;
+  justify-self: end;
+  display: flex;
+  mix-blend-mode: difference;
+  color: $color-light-background;
+  line-height: 2.0;
+  @include letter-spacing(0.08em);
+  font-size: 48px;
+  margin-left: auto;
+  text-decoration: none;
+
+  @include phone() {
+    font-size: 48px;
+    position: fixed;
+    right: 12px;
+    line-height: 1.1;
+  }
+}
