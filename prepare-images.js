@@ -20,14 +20,16 @@ fs.readdirSync(srcFolder).forEach(projectFolder => {
 
     switch (extension) {
       case 'jpg':
-        return convertImage(params);
+        return jpgToWebP(params);
+      case 'mp4':
+        return mp4ToWebM(params);
       default:
         console.error('Unrecognized file type: ', fullFileName)
     }
   });
 });
 
-const convertImage = ({ projectFolder, fileName }) => {
+function jpgToWebP({ projectFolder, fileName }) {
   Object.entries(imagesSizes).forEach(([type, width]) => {
     runCommand(
       `cwebp -q 90 -resize ${width} 0 "${srcFolder}${projectFolder}/${fileName}.jpg" -o "${outFolder}${projectFolder}/${fileName}-${type}.webp"`
@@ -35,7 +37,19 @@ const convertImage = ({ projectFolder, fileName }) => {
   });
 }
 
-const runCommand = (command) => {
+
+function mp4ToWebM({ projectFolder, fileName }) {
+  runCommand(`ffmpeg -an -y -i "${srcFolder}${projectFolder}/${fileName}.mp4" -vcodec libx264 -pix_fmt yuv420p -profile:v baseline -level 3 "${outFolder}${projectFolder}/${fileName}.mp4"`)
+
+  // TODO try webm
+  // runCommand(
+  //   `ffmpeg -i "${srcFolder}${projectFolder}/${fileName}.mp4" -vcodec libvpx -qmin 0 -qmax 50 -crf 10 -b:v 1M -acodec libvorbis "${outFolder}${projectFolder}/${fileName}.webm"`
+  // );
+}
+
+function runCommand(command) {
+  console.log('command=', command);
+
   exec(command, (err, stdout, stderr) => {
     if (err) {
       //some err occurred
