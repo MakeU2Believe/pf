@@ -28,7 +28,7 @@ const rawProjects: RawProject[] = [
       '6.mp4',
       '7.mp4',
       '8.webp',
-      '9_2.webp',
+      ['9_2.webp', null],
       '10.webp',
       '11.webp',
       '12.webp',
