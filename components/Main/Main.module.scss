@@ -1,7 +1,6 @@
 @import "../../styles/common";
 
 .thumbContainer {
-  width: 232px;
   background: #fff;
   transition: all 0.7s cubic-bezier(0.65, 0.2, 0.2, 0.97),
     background .3s ease-in-out;
@@ -38,9 +37,12 @@
   }
 }
 
+$thumbnailAspectRatio: 3 / 2;
+
 .thumbnail {
-  width: 100%;
-  height: 348px;
+  $width: 232px;
+  width: $width;
+  height: $width * $thumbnailAspectRatio;
   margin: 0 auto;
   filter: grayscale(1);
   transition-property: all;
@@ -49,6 +51,12 @@
   mix-blend-mode: difference;
   position: relative;
   object-fit: cover;
+
+  @include desktopSmall() {
+    $width: 150px;
+    width: $width;
+    height: $width * $thumbnailAspectRatio;
+  }
 }
 
 .label {
