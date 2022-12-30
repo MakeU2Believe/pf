@@ -34,7 +34,7 @@ $color-dark-text: #fff;
 $breakpoint-phone: 768px;
 $breakpoint-tablet: 1024px;
 $breakpoint-desktop-s: 1024px;
-$breakpoint-desktop-m: 1366px;
+$breakpoint-desktop-m: 1324px;
 $breakpoint-desktop-l: 1920px;
 
 @mixin phone {
@@ -73,12 +73,13 @@ $breakpoint-desktop-l: 1920px;
   }
 
   @include tablet() {
-    font-size: 13vw;
+    font-size: 11.8vw;
   }
 
   @include desktopSmall() {
-    font-size: 13vw;
+    font-size: 11.8vw;
   }
+
 }
 
 @mixin h3 {
