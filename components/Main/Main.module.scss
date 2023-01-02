@@ -97,8 +97,7 @@ $thumbnailAspectRatio: 3 / 2;
   @include notPhone() {
     padding: 64px 0;
 
-    &:not(.ready) .thumbContainer {
-      opacity: 0;
+    &:not(.ready) .thumbnail {
       width: 1px;
     }
   }
@@ -109,10 +108,10 @@ $thumbnailAspectRatio: 3 / 2;
     .thumbContainer {
       transition: all 0.5s ease-out;
     }
+  }
 
-    &:not(.ready) .thumbContainer {
-      opacity: 0;
-    }
+  &:not(.ready) .thumbContainer {
+    opacity: 0;
   }
 }
 
