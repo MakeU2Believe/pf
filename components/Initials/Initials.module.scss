@@ -9,7 +9,8 @@
   display: flex;
   mix-blend-mode: difference;
   color: $color-light-background;
-  line-height: 2.0;
+  line-height: 2;
+  z-index: $layer-interactive;
   @include letter-spacing(0.08em);
   font-size: 48px;
   margin-left: auto;
