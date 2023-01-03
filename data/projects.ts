@@ -54,7 +54,7 @@ const rawProjects: RawProject[] = [
   {
     slug: 'sayenko-kharenko',
     title: 'sayenko kharenko',
-    year: 2020,
+    year: 2021,
     type: 'identity, art direction',
     brief: 'visual identity facelift for the top-ranked ukrainian law firm. The project goal was to refine the' +
       ' existing firm’s logo, adjust the color palette, and develop a bold visual approach for how assets across different media are treated. The outcome is an optically balanced icon, refined logotype, and complete package of digital and print templates. Done with ly studio.',
