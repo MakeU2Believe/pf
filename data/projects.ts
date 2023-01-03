@@ -126,7 +126,7 @@ const rawProjects: RawProject[] = [
     title: 'koolban',
     year: 2019,
     type: 'identity, packaging, concept',
-    brief: 'identity and packaging design for the compostable trash bags manufacturer. The most utilitarian thing has to look business, so the sources for visual inspiration were construction machinery, tools and community services. My role included logotype design and packaging concept.',
+    brief: 'identity and packaging design for the compostable trash bags manufacturer. The most utilitarian thing has to look business, so the sources for visual inspiration were construction machinery, tools and community services. Done with hooga.',
     media: [
       '1.webp',
       '2.webp',
