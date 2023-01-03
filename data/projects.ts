@@ -77,7 +77,7 @@ const rawProjects: RawProject[] = [
     title: 'celebrating tigers',
     year: 2018,
     type: 'editorial, packaging',
-    brief: 'fundraising project to help the “tiger canyon” hotel in south africa. The coffee-table book with wildlife photography by alex kirichko. Standard edition of 900 copies, plus 100 premium edition examples packed in a bespoke gift box and came with a unique set of art prints. Designed in collaboration with dmytro yarynych. Photography: alex kirichko; words: john varty; printed by:; isbn: . case study photogrpahy: ivan sokolyanskyi',
+    brief: 'fundraising project to help the “tiger canyons” hotel in south africa. The coffee-table book with wildlife photography by alex kirichko. Standard edition of 900 copies, plus 100 premium edition examples packed in a bespoke gift box and came with a unique set of art prints. Designed in collaboration with dmytro yarynych. Photography: alex kirichko; words: john varty; isbn: 9789665008132; printed by: buch-one. case study photogrpahy: ivan sokolyanskyi',
     media: [
       '1.webp',
       '2.webp',
@@ -126,7 +126,7 @@ const rawProjects: RawProject[] = [
     title: 'koolban',
     year: 2019,
     type: 'identity, packaging, concept',
-    brief: 'identity and packaging design for the compostable trash bags manufacturer. The most utilitarian thing has to look business, so the sources for visual inspiration were construction machinery, tools and community services. my role included logotype design and packaging concept.',
+    brief: 'identity and packaging design for the compostable trash bags manufacturer. The most utilitarian thing has to look business, so the sources for visual inspiration were construction machinery, tools and community services. My role included logotype design and packaging concept.',
     media: [
       '1.webp',
       '2.webp',
