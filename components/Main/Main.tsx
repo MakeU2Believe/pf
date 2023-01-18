@@ -223,7 +223,7 @@ export class Main extends React.Component<MainProps, MainState> {
 
   render() {
     const {isCarouselReady, activeProject, renderedProjects} = this.state;
-    const linkProps = {href: '/resume', text: '_résumé_', mobileText: 'cv'};
+    const linkProps = {href: '/resume', text: 'résumé', mobileText: 'cv'};
 
     return (
       <>

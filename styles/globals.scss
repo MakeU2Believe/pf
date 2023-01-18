@@ -17,6 +17,7 @@
 
 html {
     @include mantonico();
+    -webkit-font-smoothing: antialiased;
     font-variant-numeric: slashed-zero;
     background-color: var(--page-bg-color, $color-light-background);
     color: var(--page-text-color, $color-light-text);

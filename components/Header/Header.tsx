@@ -58,7 +58,7 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
                 [s.hideMobile]: hideMobile,
               })}
               data-title={link.mobileText}>
-              {link.text}
+              &nbsp;{link.text}&nbsp;
             </NextLink>
           )
         }
