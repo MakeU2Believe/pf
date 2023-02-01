@@ -122,6 +122,20 @@ const rawProjects: RawProject[] = [
     ],
   },
   {
+    slug: 'gallery-detailing',
+    title: 'gallery detailing',
+    year: 2021,
+    type: 'web, art direction',
+    brief: 'brand consulting and web design for the car detailing studio based in kyiv.',
+    media: [
+      '2.mp4',
+      '3.webp',
+      '4.mp4',
+      '5.mp4',
+      '6.mp4',
+    ],
+  },
+  {
     slug: 'koolban',
     title: 'koolban',
     year: 2019,
