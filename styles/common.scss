@@ -63,9 +63,9 @@ $breakpoint-desktop-l: 1920px;
 
 @mixin h2 {
   @include rublena();
-  @include letter-spacing(0.08em);
-  line-height: 1.11;
-  font-size: 156px;
+  @include letter-spacing(0.00em);
+  line-height: 0.7;
+  font-size: 13.2vw;
 
   @include phone() {
     font-size: 22vw;
@@ -83,7 +83,7 @@ $breakpoint-desktop-l: 1920px;
 
 @mixin h3 {
   font-size: 24px;
-  line-height: 1.5;
+  line-height: 1.4;
 
   @include phone() {
     font-size: 20px;

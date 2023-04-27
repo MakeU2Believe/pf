@@ -8,11 +8,11 @@
     width: 100vw;
     height: 100vh;
     grid-template-columns:
-      var(--col-1-width, 3fr)
+      var(--col-1-width, 1fr)
       var(--col-2-width, min-content)
-      var(--col-3-width, 2fr)
+      var(--col-3-width, 7%)
       var(--col-4-width, min-content)
-      var(--col-5-width, 22px);
+      var(--col-5-width, 16px);
     grid-template-rows:
       var(--row-1-height, min-content)
       var(--row-2-height, min-content)

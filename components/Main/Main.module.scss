@@ -5,6 +5,8 @@
   grid-row-start: 2;
   @include h3();
   justify-self: flex-start;
+  margin-top: 60px;
+  margin-left: 0.6%;
 
   @include phone() {
   }
@@ -21,7 +23,7 @@
 
     .thumbnail {
       filter: none;
-      // transform: scale(1); // scale effect on hover
+      transform: scale(1.08); // scale effect on hover
     }
   }
 
@@ -45,7 +47,7 @@
 
   @include notPhone() {
     display: block;
-    padding: 3px 0; // gap between items
+    padding: 8px 8px; // gap between items
   }
 }
 
