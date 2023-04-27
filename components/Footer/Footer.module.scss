@@ -1,7 +1,7 @@
 @import "../../styles/common";
 
 .contacts {
-  @include h3();
+  @include h5();
   @include blend-content();
   transition: all 1.5s ease-out;
   margin-bottom: 16px;
