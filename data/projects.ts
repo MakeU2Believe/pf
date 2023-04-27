@@ -17,7 +17,7 @@ const rawProjects: RawProject[] = [
     slug: 'wix-whaaat',
     title: 'wix whaaat',
     year: 2020,
-    type: 'branding, web, art direction',
+    type: 'branding, web',
     brief: 'wix whaaat is a work-free zone for the employees with a variety of services offered. Coffee shop, beauty space, store, nap room — whatever is required to recharge during the day. My role in this project included visual identity design, photoshoot creative direction, and website development.',
     media: [
       '1.webp',
@@ -39,7 +39,7 @@ const rawProjects: RawProject[] = [
     slug: 'litkovska',
     title: 'litkovska',
     year: 2018,
-    type: 'identity, art direction',
+    type: 'visual identity',
     brief: 'the litkovska commissioned hooga for a visual identity update in 2018. The agency’s approach was to anchor the identity around the bespoke tailored wordmark. As part of the team, i was responsible for assets design, including business cards, tags, labels, pe bags, and packaging boxes. Images courtesy of hooga and litkovska.',
     media: [
       '1.webp',
@@ -55,7 +55,7 @@ const rawProjects: RawProject[] = [
     slug: 'sayenko-kharenko',
     title: 'sayenko kharenko',
     year: 2021,
-    type: 'identity, art direction',
+    type: 'visual identity',
     brief: 'visual identity facelift for the top-ranked ukrainian law firm. The project goal was to refine the' +
       ' existing firm’s logo, adjust the color palette, and develop a bold visual approach for how assets across different media are treated. The outcome is an optically balanced icon, refined logotype, and complete package of digital and print templates. Done with ly studio.',
     media: [
@@ -125,7 +125,7 @@ const rawProjects: RawProject[] = [
     slug: 'gallery-detailing',
     title: 'gallery detailing',
     year: 2021,
-    type: 'web, art direction',
+    type: 'web',
     brief: 'brand consulting and web design for the car detailing studio based in kyiv.',
     media: [
       '2.mp4',
@@ -139,7 +139,7 @@ const rawProjects: RawProject[] = [
     slug: 'koolban',
     title: 'koolban',
     year: 2019,
-    type: 'identity, packaging, concept',
+    type: 'visual identity, packaging',
     brief: 'identity and packaging design for the compostable trash bags manufacturer. The most utilitarian thing has to look business, so the sources for visual inspiration were construction machinery, tools and community services. Done with hooga.',
     media: [
       '1.webp',
