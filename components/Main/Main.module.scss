@@ -54,7 +54,7 @@
 $thumbnailAspectRatio: 3 / 2;
 
 .thumbnail {
-  $width: 232px;
+  $width: 8.27vw;
   width: $width;
   height: $width * $thumbnailAspectRatio;
   margin: 0 auto;
