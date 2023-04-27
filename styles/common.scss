@@ -90,6 +90,13 @@ $breakpoint-desktop-l: 1920px;
   }
 }
 
+@mixin h4 {
+  @include rublena();
+  @include letter-spacing(0.03em);
+  font-size: 18px;
+  line-height: 1.2;
+}
+
 @mixin h5 {
   @include mantonico();
   font-size: 16px;
