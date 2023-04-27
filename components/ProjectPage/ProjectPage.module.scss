@@ -15,7 +15,7 @@
   }
 
   @include phone() {
-    padding-top: 101px;
+    padding-top: 75px;
   }
 }
 
@@ -24,27 +24,24 @@
   @include letter-spacing(0.1em);
   grid-column-start: 4;
   grid-row-start: 2;
-  margin-left: auto;
 }
 
 .projectDetails {
   font-size: 16px;
   line-height: 1.8;
   grid-column-start: 2;
-  text-align: center;
 
   @include phone() {
-    text-align: right;
     line-height: 1.4;
   }
 }
 
 .projectBrief {
+  text-align: left;
   grid-column-start: 4;
-  text-align: center;
 
   @include phone() {
-    padding: 26px 8px;
+    padding: 24px 0;
     line-height: 1.6;
   }
 }
@@ -61,7 +58,7 @@
   grid-row-start: 4;
 
   @include phone() {
-    padding: 32px 0 186px;
+    padding: 0 0 186px;
   }
 
   @include tablet() {

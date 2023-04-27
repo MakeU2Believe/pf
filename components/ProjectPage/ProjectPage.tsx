@@ -2,7 +2,6 @@ import React from 'react';
 
 import s from './ProjectPage.module.scss';
 import {Layout} from '../Layout';
-import {Footer} from '../Footer';
 import {ScrollableContent} from '../ScrollableContent';
 import {Project} from '../../data';
 import Link from 'next/link';
@@ -38,15 +37,13 @@ export class ProjectPage extends React.Component<Project> {
     return (
       <div className={s.root}>
         <Layout className={s.pageLayout}>
-          <Header inContent={true} hideMobile={true}/>
+          <Header dummyHeader={true} />
 
           <Initials />
-
-          <Footer/>
         </Layout>
 
         <ScrollableContent className={s.content} rootRef={this.contentRef}>
-          <Header inContent={true} hideMobile={true}/>
+          <Header hideMobile={true} />
 
           <Label className={s.label}>{title}</Label>
 

@@ -6,7 +6,7 @@ export default function Resume() {
     <>
       <PageHead
         title="nick deineko — résumé"
-        description={mainInfo.subtitle}
+        description={mainInfo.subtitle.join(', ')}
       />
 
       <style>{`:root { --page-bg-color: #111; --page-text-color: #fff;}`}</style>

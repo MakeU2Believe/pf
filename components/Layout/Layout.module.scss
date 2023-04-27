@@ -1,7 +1,7 @@
 @import "../../styles/common";
 
 .root {
-  justify-items: center;
+  justify-items: left;
 
   @include notPhone() {
     display: grid;
@@ -12,7 +12,7 @@
       var(--col-2-width, min-content)
       var(--col-3-width, 2fr)
       var(--col-4-width, min-content)
-      var(--col-5-width, 32px);
+      var(--col-5-width, 22px);
     grid-template-rows:
       var(--row-1-height, min-content)
       var(--row-2-height, min-content)

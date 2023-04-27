@@ -1,42 +1,12 @@
 @import "../../styles/common";
 
 .name,
-.toggle {
-  grid-column-start: 2;
-}
-
-.surname,
-.subtitle {
-  grid-column-start: 4;
-}
-
-.subtitle {
-  @include h3();
-  max-width: 300px;
-  margin: 0 auto;
-  text-align: center;
-
-  @include phone() {
-    margin-top: 24px;
-    max-width: 275px;
-  }
-}
-
-.name,
-.surname,
-.toggle,
-.subtitle {
+.surname {
+  @include h2();
   @include blend-content();
+  text-align: left;
+  grid-row: 1 / 2;
 
-  &.inContent {
-    visibility: hidden;
-
-    @include phone() {
-      visibility: visible;
-    }
-  }
-
-  &:not(.inContent),
   &.hideMobile {
     @include phone() {
       display: none;
@@ -44,53 +14,19 @@
   }
 }
 
-.name,
+.name {
+  grid-column-start: 2;
+}
+
 .surname {
-  @include h2();
-  text-align: right;
-  grid-row: 1 / 2;
+  grid-column-start: 4;
 }
 
-.toggle,
-.subtitle {
-  grid-row: 2 / 3;
-}
-
-.toggle {
-  @include notPhone() {
-    @include h3();
-    align-self: start;
-    transition: all 1.5s ease-out;
-
-    &:hover {
-      transition: all 0.4s ease-in;
-      background-color: var(--page-text-color, $color-light-background);
-      color: var(--page-bg-color, $color-light-text);
-    }
-  }
+.dummyHeader {
+  visibility: hidden;
 
   @include phone() {
-    position: fixed;
-    bottom: 44px;
-    right: 12px;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background-color: var(--page-text-color, $color-light-text);
-    font-size: 0;
-    mix-blend-mode: normal;
-
-    &:after {
-      content: attr(data-title);
-      position: absolute;
-      top: 16px;
-      left: 15px;
-      @include rublena();
-      @include letter-spacing(0.1em);
-      font-size: 14px;
-      line-height: 1;
-      color: var(--page-bg-color, $color-light-background);
-    }
+    display: none;
   }
 }
 

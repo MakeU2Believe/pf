@@ -10,7 +10,7 @@ interface InitialsProps {
 export const Initials = ({className}: InitialsProps) => {
   return (
     <Link href="/" className={classNames(s.initials, className)}>
-      nd
+      ND
     </Link>
   )
 }
