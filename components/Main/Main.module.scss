@@ -86,7 +86,7 @@ $thumbnailAspectRatio: 3 / 2;
   }
 
   @include desktop() {
-    --width: 237px;
+    --width: 150px;
   }
 
   @include desktopLarge() {
