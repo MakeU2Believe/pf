@@ -73,13 +73,13 @@ $thumbnailAspectRatio: 3 / 2;
   object-fit: cover;
 
   @include desktopSmall() {
-    $width: 11.5vw;
+    $width: 11vw;
     width: $width;
     height: $width * $thumbnailAspectRatio;
   }
 
   @include tablet() {
-    $width: 12.5vw;
+    $width: 11.5vw;
     width: $width;
     height: $width * $thumbnailAspectRatio;
   }
