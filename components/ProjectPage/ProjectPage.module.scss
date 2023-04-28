@@ -21,11 +21,15 @@
 
 .label {
   font-size: 18px;
-  @include letter-spacing(0.025em);
+  @include letter-spacing(0.03em);
   padding-top: 84px;
   padding-bottom: 12px;
-  grid-column-start: 4;
+  grid-column-start: 2;
   grid-row-start: 2;
+
+  @include phone() {
+    padding-top: 36px;
+  }
 }
 
 .projectDetails {
