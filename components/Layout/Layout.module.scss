@@ -27,9 +27,9 @@
   }
 
   @include tablet() {
-    --col-1-width: 20px;
+    --col-1-width: 16px;
     --col-3-width: 1fr;
-    --col-5-width: 20px;
+    --col-5-width: 16px;
   }
 
   @include desktopSmall() {
