@@ -34,11 +34,9 @@
 
   @include desktopSmall() {
     --col-1-width: 1fr;
-    //--col-3-width: 1fr;
   }
 
   @include desktop() {
     --col-1-width: 1fr;
-    //--col-3-width: minmax(245px, 1fr);
   }
 }

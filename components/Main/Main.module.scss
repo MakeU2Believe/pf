@@ -40,6 +40,7 @@
       display: none;
     }
   }
+
 }
 
 .thumbLink {
@@ -48,6 +49,11 @@
   @include notPhone() {
     display: block;
     padding: 8px 8px; // gap between items
+  }
+
+  @include desktopSmall() {
+    display: block;
+    padding: 5px 5px;
   }
 }
 
@@ -67,13 +73,13 @@ $thumbnailAspectRatio: 3 / 2;
   object-fit: cover;
 
   @include desktopSmall() {
-    $width: 17.5vw;
+    $width: 11vw;
     width: $width;
     height: $width * $thumbnailAspectRatio;
   }
 
   @include tablet() {
-    $width: 17.5vw;
+    $width: 12.5vw;
     width: $width;
     height: $width * $thumbnailAspectRatio;
   }
