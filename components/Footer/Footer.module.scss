@@ -7,6 +7,8 @@
   margin-bottom: 16px;
   background-color: $color-light-background;
   color: $color-light-text;
+  line-height: 0.68;
+  padding-top: 10px;
 
   &:hover {
     transition: all 1.2s ease-in;
