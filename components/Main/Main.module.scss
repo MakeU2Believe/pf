@@ -51,7 +51,7 @@
 
   @include notPhone() {
     display: block;
-    padding: 8px 8px; // gap between items
+    padding: 7px 7px; // gap between items
   }
 
   @include desktopSmall() {
@@ -90,7 +90,7 @@ $thumbnailAspectRatio: 3 / 2;
   }
 
   @include desktopLarge() {
-    --width: 237px;
+    --width: 165px;
   }
 }
 
