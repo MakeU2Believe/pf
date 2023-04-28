@@ -85,8 +85,20 @@ $breakpoint-desktop-l: 1920px;
   font-size: 24px;
   line-height: 1.4;
 
+  @include desktop() {
+    font-size: 21px;
+  }
+
+  @include desktopSmall() {
+    font-size: 21px;
+  }
+
+  @include tablet() {
+    font-size: 21px;
+  }
+
   @include phone() {
-    font-size: 20px;
+    font-size: 21px;
   }
 }
 
