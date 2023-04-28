@@ -23,7 +23,10 @@
 
     .thumbnail {
       filter: none;
-      transform: scale(1.08); // scale effect on hover
+
+      @include notPhone() {
+        transform: scale(1.08); // scale effect on hover
+      }
     }
   }
 
@@ -60,9 +63,7 @@
 $thumbnailAspectRatio: 3 / 2;
 
 .thumbnail {
-  $width: 8.27vw;
-  width: $width;
-  height: $width * $thumbnailAspectRatio;
+  height: calc(var(--width) * $thumbnailAspectRatio);
   margin: 0 auto;
   filter: grayscale(1);
   transition-property: all;
@@ -72,16 +73,24 @@ $thumbnailAspectRatio: 3 / 2;
   position: relative;
   object-fit: cover;
 
-  @include desktopSmall() {
-    $width: 11vw;
-    width: $width;
-    height: $width * $thumbnailAspectRatio;
+  @include phone() {
+    --width: 237px;
   }
 
   @include tablet() {
-    $width: 11.5vw;
-    width: $width;
-    height: $width * $thumbnailAspectRatio;
+    --width: 237px;
+  }
+
+  @include desktopSmall() {
+    --width: 237px;
+  }
+
+  @include desktop() {
+    --width: 237px;
+  }
+
+  @include desktopLarge() {
+    --width: 237px;
   }
 }
 
