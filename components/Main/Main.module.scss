@@ -78,11 +78,11 @@ $thumbnailAspectRatio: 3 / 2;
   }
 
   @include tablet() {
-    --width: 237px;
+    --width: 150px;
   }
 
   @include desktopSmall() {
-    --width: 237px;
+    --width: 150px;
   }
 
   @include desktop() {
@@ -198,6 +198,22 @@ $thumbnailAspectRatio: 3 / 2;
   margin-bottom: 6px;
   margin-top: 12px;
   overflow: hidden;
+
+  @include desktop() {
+    font-size: 16px;
+  }
+
+  @include desktopSmall() {
+    font-size: 16px;
+  }
+
+  @include tablet() {
+    font-size: 16px;
+  }
+
+  @include phone() {
+    font-size: 16px;
+  }
 }
 
 .projectDescription {
