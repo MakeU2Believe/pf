@@ -7,6 +7,10 @@
   text-align: left;
   grid-row: 1 / 2;
 
+  @include tablet {
+    font-size: 15vw;
+  }
+
   &.hideMobile {
     @include phone() {
       display: none;
