@@ -18,4 +18,9 @@
     top: 0;
     line-height: 0.7;
   }
+
+  @include tablet() {
+    font-size: 13.6vw;
+  }
+
 }
