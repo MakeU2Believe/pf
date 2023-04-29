@@ -22,13 +22,17 @@
 .label {
   font-size: 18px;
   @include letter-spacing(0.03em);
-  padding-top: 84px;
+  padding-top: 87px;
   padding-bottom: 12px;
   grid-column-start: 2;
   grid-row-start: 2;
 
   @include phone() {
     padding-top: 36px;
+  }
+
+  @include tablet() {
+    padding-top: 74px;
   }
 }
 
@@ -135,6 +139,10 @@
 .nextProjectTitle {
   grid-column-start: 4;
   font-size: 16px;
+
+  @include tablet() {
+    grid-column-start: 2;
+  }
 
   @include phone() {
     display: none;
