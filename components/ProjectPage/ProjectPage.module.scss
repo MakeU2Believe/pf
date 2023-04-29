@@ -33,6 +33,7 @@
 
   @include tablet() {
     padding-top: 74px;
+    padding-bottom: 6px;
   }
 }
 
@@ -44,6 +45,10 @@
   @include phone() {
     line-height: 1.4;
   }
+
+  @include tablet() {
+    line-height: 1.6;
+  }
 }
 
 .projectBrief {
@@ -53,6 +58,10 @@
 
   @include phone() {
     padding: 24px 0;
+    line-height: 1.6;
+  }
+
+  @include tablet() {
     line-height: 1.6;
   }
 }
