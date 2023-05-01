@@ -161,7 +161,7 @@ const rawProjects: RawProject[] = [
     year: 2022,
     type: 'personal, poster',
     brief: 'The largest cargo airplane was destroyed within the first days of russian invasion of Ukraine. It' +
-      ' existed in a single example. This personal project is a tribute to such a beautiful and majestic piece of' +
+      ' existed in a single example. This project is a tribute to the beautiful and majestic piece of' +
       ' machinery. Printed in an edition of 225 pcs. All of the profit was donated to the volunteers, which help Ukrainian armed forces. Case study photogrpahy: Ivan Sokolyanskyi',
     media: [
       '1.webp',
