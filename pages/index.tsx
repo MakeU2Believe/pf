@@ -14,7 +14,7 @@ export default function Index({projects}: {projects: Project[]}) {
   return (
     <>
       <PageHead
-        title="nick deineko"
+        title="Nick Deineko"
         description={`${mainInfo.subtitle.join(', ')}.`}
       />
 
