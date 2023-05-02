@@ -10,6 +10,10 @@
   line-height: 0.68;
   padding-top: 10px;
 
+  @include phone() {
+    margin-bottom: 10px;
+  }
+
   &:hover {
     transition: all 1.2s ease-in;
     background-color: $color-light-text;
