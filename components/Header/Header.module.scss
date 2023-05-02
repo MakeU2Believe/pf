@@ -38,7 +38,8 @@
   transition: transform 300ms ease-in-out;
 
   &:not(.showInitials) {
-    transform: translateY(-68px);
+    transform: translateY(-20vw);
+    transition: none;
   }
 
   @include notPhone() {
