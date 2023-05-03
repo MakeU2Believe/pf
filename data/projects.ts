@@ -77,7 +77,7 @@ const rawProjects: RawProject[] = [
     title: 'Celebrating tigers',
     year: 2018,
     type: 'editorial, packaging',
-    brief: 'Fundraising project to help the “Tiger Canyons” hotel in south africa. The coffee-table book with wildlife photography by Alex Kirichko. Standard edition of 900 copies, plus 100 premium edition examples packed in a bespoke gift box and came with a unique set of art prints. Designed in collaboration with Dmytro Yarynych. Photography: Alex Kirichko; words: John Varty; ISBN: 9789665008132; printed by: Buch-one. Case study photogrpahy: Ivan Sokolyanskyi',
+    brief: 'Fundraising project to help the “Tiger Canyons” hotel in South Africa. The coffee-table book with wildlife photography by Alex Kirichko. Standard edition of 900 copies, plus 100 premium edition examples packed in a bespoke gift box and came with a unique set of art prints. Designed in collaboration with Dmytro Yarynych. Photography: Alex Kirichko; words: John Varty; ISBN: 9789665008132; printed by: Buch-one. Case study photogrpahy: Ivan Sokolyanskyi',
     media: [
       '1.webp',
       '2.webp',
@@ -103,8 +103,8 @@ const rawProjects: RawProject[] = [
     title: 'Soviet modernism',
     year: 2019,
     type: 'editorial',
-    brief: 'Olexyi Bykov’s photographic homage to works of Soviet USkrainian architects. It displays modernist' +
-      ' objects within diverse architectural environment of modern ukrainian cities. Done with Hooga. Photogrpahy: Alex Bykov; words: Ievgeniia Gubkina, Alex Bykov and John Nicholson; published by: Osnovy; printed by: Dom; ISBN: 9789665008194; case study photogrpahy: Ivan Sokolyanskyi',
+    brief: 'Olexyi Bykov’s photographic homage to works of Soviet Ukrainian architects. It displays modernist' +
+      ' objects within diverse architectural landscape of modern Ukrainian cities. Done with Hooga. Photogrpahy: Alex Bykov; words: Ievgeniia Gubkina, Alex Bykov and John Nicholson; published by: Osnovy; printed by: Dom; ISBN: 9789665008194; case study photogrpahy: Ivan Sokolyanskyi',
     media: [
       '1.webp',
       '2.webp',
