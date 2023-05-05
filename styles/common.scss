@@ -6,7 +6,7 @@ $content-padding-top-mobile: 36px;
 $color-light-background: #fff;
 $color-light-text: #000;
 
-$color-dark-background: #111;
+$color-dark-background: #000;
 $color-dark-text: #fff;
 
 @mixin rublena() {
@@ -33,8 +33,8 @@ $color-dark-text: #fff;
 
 $breakpoint-phone: 768px;
 $breakpoint-tablet: 1024px;
-$breakpoint-desktop-s: 1024px;
-$breakpoint-desktop-m: 1324px;
+$breakpoint-desktop-s: 1124px;
+$breakpoint-desktop-m: 1365px;
 $breakpoint-desktop-l: 1920px;
 
 @mixin phone {
@@ -63,13 +63,14 @@ $breakpoint-desktop-l: 1920px;
 
 @mixin h2 {
   @include rublena();
-  @include letter-spacing(0.08em);
-  line-height: 1.11;
-  font-size: 156px;
+  @include letter-spacing(0.00em);
+  line-height: 0.7;
+  font-size: 13.2vw;
+  margin-left: -0.02em;
 
   @include phone() {
     font-size: 22vw;
-    line-height: 0.85;
+    line-height: 0.9;
   }
 
   @include tablet() {
@@ -77,19 +78,44 @@ $breakpoint-desktop-l: 1920px;
   }
 
   @include desktopSmall() {
-    font-size: 11.8vw;
+    font-size: 13.2vw;
   }
-
 }
 
 @mixin h3 {
   font-size: 24px;
-  line-height: 1.5;
+  line-height: 1.4;
+
+  @include desktop() {
+    font-size: 21px;
+  }
+
+  @include desktopSmall() {
+    font-size: 21px;
+  }
+
+  @include tablet() {
+    font-size: 21px;
+  }
 
   @include phone() {
-    font-size: 20px;
+    font-size: 21px;
   }
 }
+
+@mixin h4 {
+  @include rublena();
+  @include letter-spacing(0.03em);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+@mixin h5 {
+  @include mantonico();
+  font-size: 16px;
+  line-height: 2;
+}
+
 
 :export {
   darkBackgroundColor: $color-dark-background;

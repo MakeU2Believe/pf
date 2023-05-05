@@ -1,18 +1,18 @@
 @import "../../styles/common";
 
 .root {
-  justify-items: center;
+  justify-items: left;
 
   @include notPhone() {
     display: grid;
     width: 100vw;
     height: 100vh;
     grid-template-columns:
-      var(--col-1-width, 3fr)
+      var(--col-1-width, 1fr)
       var(--col-2-width, min-content)
-      var(--col-3-width, 2fr)
+      var(--col-3-width, 7%)
       var(--col-4-width, min-content)
-      var(--col-5-width, 32px);
+      var(--col-5-width, 16px);
     grid-template-rows:
       var(--row-1-height, min-content)
       var(--row-2-height, min-content)
@@ -23,22 +23,20 @@
   @include phone() {
     display: flex;
     flex-direction: column;
-    padding: 0 12px 6px;
+    padding: 0 12px 60px;
   }
 
   @include tablet() {
-    --col-1-width: 20px;
+    --col-1-width: 108px;
     --col-3-width: 1fr;
-    --col-5-width: 20px;
+    --col-5-width: 16px;
   }
 
   @include desktopSmall() {
-    --col-1-width: 34px;
-    --col-3-width: 1fr;
+    --col-1-width: 1fr;
   }
 
   @include desktop() {
-    --col-1-width: 2fr;
-    --col-3-width: minmax(245px, 1fr);
+    --col-1-width: 1fr;
   }
 }

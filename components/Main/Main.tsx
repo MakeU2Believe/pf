@@ -11,7 +11,7 @@ import {Label} from '../Label';
 import NextLink from 'next/link';
 import classNames from 'classnames';
 import {getProjectContext} from '../setProjectContext';
-import {projects} from '../../data';
+import {mainInfo, projects} from '../../data';
 import {isMobile} from '../isMobile';
 
 export interface MainProps {
@@ -148,20 +148,14 @@ export class Main extends React.Component<MainProps, MainState> {
     }
   });
 
-   getLinesY = () => {
-    const {y: subtitleY, height: subtitleHeight} = document
-      .querySelector('#subtitle')
+  getLinesY = () => {
+    const bottomLine = window.innerHeight;
+
+    const {y: subtitleY, height: headerHeight} = document
+      .querySelector('#surname')
       ?.getBoundingClientRect() || {};
 
-    const {y: bottomLine} = document
-      .querySelector('#copyright')
-      ?.getBoundingClientRect() || {};
-
-    if (!subtitleY || !subtitleHeight || !bottomLine) {
-      return null;
-    }
-
-    const topLine = subtitleY + subtitleHeight;
+    const topLine = (subtitleY === undefined || headerHeight === undefined) ? 0 : subtitleY + headerHeight;
 
     return {
       topLine,
@@ -223,12 +217,17 @@ export class Main extends React.Component<MainProps, MainState> {
 
   render() {
     const {isCarouselReady, activeProject, renderedProjects} = this.state;
-    const linkProps = {href: '/resume', text: 'résumé', mobileText: 'cv'};
 
     return (
       <>
         <Layout>
-          <Header link={linkProps}/>
+          <Header />
+
+          <h3 className={s.subtitle}>
+            {mainInfo.subtitle.map((line, i) => (
+              <span key={i}>{line}{mainInfo.subtitle.length - 1 === i ? '.' : ','}<br/></span>
+            ))}
+          </h3>
 
           <div className={s.projectDetailsContainer}>
             {
@@ -240,15 +239,11 @@ export class Main extends React.Component<MainProps, MainState> {
             }
           </div>
 
-          <Label className={s.label}>work</Label>
-
           <Footer/>
         </Layout>
 
         <ScrollableContent rootRef={this.contentRef} onScroll={this.onContentScroll}>
-          <Header link={linkProps} inContent={true} showInitials={true}/>
-
-          <Label className={classNames(s.label, s.mobile)}>work</Label>
+          <Header hideMobile={true} showInitials={true}/>
 
           <ul className={classNames(s.projects, {[s.ready]: isCarouselReady})} ref={this.projectListRef}>
             {renderedProjects.map((project) => {

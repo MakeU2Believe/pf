@@ -15,10 +15,10 @@ export type Project = RawProject & {
 const rawProjects: RawProject[] = [
   {
     slug: 'wix-whaaat',
-    title: 'wix whaaat',
+    title: 'Wix Whaaat',
     year: 2020,
-    type: 'branding, web, art direction',
-    brief: 'wix whaaat is a work-free zone for the employees with a variety of services offered. Coffee shop, beauty space, store, nap room — whatever is required to recharge during the day. My role in this project included visual identity design, photoshoot creative direction, and website development.',
+    type: 'branding, web',
+    brief: 'Wix Whaaat is a work-free zone for the employees with a variety of services offered. Coffee shop, beauty space, store, nap room — whatever is required to recharge during the day. My role in this project included visual identity design, photoshoot creative direction and website development.',
     media: [
       '1.webp',
       '2.mp4',
@@ -37,10 +37,10 @@ const rawProjects: RawProject[] = [
   },
   {
     slug: 'litkovska',
-    title: 'litkovska',
+    title: 'Litkovska',
     year: 2018,
-    type: 'identity, art direction',
-    brief: 'the litkovska commissioned hooga for a visual identity update in 2018. The agency’s approach was to anchor the identity around the bespoke tailored wordmark. As part of the team, i was responsible for assets design, including business cards, tags, labels, pe bags, and packaging boxes. Images courtesy of hooga and litkovska.',
+    type: 'visual identity',
+    brief: 'The Litkovska commissioned Hooga for a visual identity update in 2018. The agency’s approach was to anchor the identity around the bespoke tailored wordmark. As part of the team, I was responsible for assets design, including business cards, tags, labels, pe bags, and packaging boxes. Images courtesy of Hooga and Litkovska.',
     media: [
       '1.webp',
       '2.webp',
@@ -53,11 +53,11 @@ const rawProjects: RawProject[] = [
   },
   {
     slug: 'sayenko-kharenko',
-    title: 'sayenko kharenko',
+    title: 'Sayenko Kharenko',
     year: 2021,
-    type: 'identity, art direction',
-    brief: 'visual identity facelift for the top-ranked ukrainian law firm. The project goal was to refine the' +
-      ' existing firm’s logo, adjust the color palette, and develop a bold visual approach for how assets across different media are treated. The outcome is an optically balanced icon, refined logotype, and complete package of digital and print templates. Done with ly studio.',
+    type: 'visual identity',
+    brief: 'Visual identity facelift for the top-ranked Ukrainian law firm. The project goal was to refine the' +
+      ' existing firm’s logo, adjust the color palette, and develop a bold visual approach for how assets across different media are treated. The outcome is an optically balanced icon, refined logotype, and complete package of digital and print templates. Done with LY studio.',
     media: [
       '1.webp',
       '2.webp',
@@ -74,10 +74,10 @@ const rawProjects: RawProject[] = [
   },
   {
     slug: 'celebrating-tigers',
-    title: 'celebrating tigers',
+    title: 'Celebrating tigers',
     year: 2018,
     type: 'editorial, packaging',
-    brief: 'fundraising project to help the “tiger canyons” hotel in south africa. The coffee-table book with wildlife photography by alex kirichko. Standard edition of 900 copies, plus 100 premium edition examples packed in a bespoke gift box and came with a unique set of art prints. Designed in collaboration with dmytro yarynych. Photography: alex kirichko; words: john varty; isbn: 9789665008132; printed by: buch-one. Case study photogrpahy: ivan sokolyanskyi',
+    brief: 'Fundraising project to help the “Tiger Canyons” hotel in South Africa. The coffee-table book with wildlife photography by Alex Kirichko. Standard edition of 900 copies, plus 100 premium edition examples packed in a bespoke gift box and came with a unique set of art prints. Designed in collaboration with Dmytro Yarynych. Photography: Alex Kirichko; words: John Varty; ISBN: 9789665008132; printed by: Buch-one. Case study photogrpahy: Ivan Sokolyanskyi',
     media: [
       '1.webp',
       '2.webp',
@@ -100,11 +100,11 @@ const rawProjects: RawProject[] = [
   },
   {
     slug: 'soviet-modernism',
-    title: 'soviet modernism',
+    title: 'Soviet modernism',
     year: 2019,
     type: 'editorial',
-    brief: 'olexyi bykov’s photographic homage to works of soviet ukrainian architects. It displays modernist' +
-      ' objects within diverse architectural environment of modern ukrainian cities. Done with hooga. Photogrpahy: alex bykov; words: ievgeniia gubkina, alex bykov and john nicholson; published by: osnovy; printed by: dom; isbn: 9789665008194; case study photogrpahy: ivan sokolyanskyi',
+    brief: 'Olexyi Bykov’s photographic homage to works of Soviet Ukrainian architects. It displays modernist' +
+      ' objects within diverse architectural landscape of modern Ukrainian cities. Done with Hooga. Photogrpahy: Alex Bykov; words: Ievgeniia Gubkina, Alex Bykov and John Nicholson; published by: Osnovy; printed by: Dom; ISBN: 9789665008194; case study photogrpahy: Ivan Sokolyanskyi',
     media: [
       '1.webp',
       '2.webp',
@@ -123,10 +123,10 @@ const rawProjects: RawProject[] = [
   },
   {
     slug: 'gallery-detailing',
-    title: 'gallery detailing',
+    title: 'Gallery detailing',
     year: 2021,
-    type: 'web, art direction',
-    brief: 'brand consulting and web design for the car detailing studio based in kyiv.',
+    type: 'web',
+    brief: 'Brand consulting and website design for the car detailing studio based in Kyiv.',
     media: [
       '2.mp4',
       '3.webp',
@@ -137,10 +137,10 @@ const rawProjects: RawProject[] = [
   },
   {
     slug: 'koolban',
-    title: 'koolban',
+    title: 'Koolban',
     year: 2019,
-    type: 'identity, packaging, concept',
-    brief: 'identity and packaging design for the compostable trash bags manufacturer. The most utilitarian thing has to look business, so the sources for visual inspiration were construction machinery, tools and community services. Done with hooga.',
+    type: 'visual identity, packaging',
+    brief: 'Identity and packaging design for the compostable trash bags manufacturer. The most utilitarian thing has to look business, so the sources for visual inspiration were construction machinery, tools and community services. Done with Hooga.',
     media: [
       '1.webp',
       '2.webp',
@@ -157,12 +157,12 @@ const rawProjects: RawProject[] = [
   },
   {
     slug: 'mriya',
-    title: 'mriya',
+    title: 'Mriya',
     year: 2022,
     type: 'personal, poster',
-    brief: 'the largest cargo airplane was destroyed within the first days of russian invasion of ukraine. It' +
-      ' existed in a single example. This personal project is a tribute to such a beautiful and majestic piece of' +
-      ' machinery. Printed in an edition of 225 pcs. All of the profit was donated to the volunteers, which help ukrainian armed forces. Case study photogrpahy: ivan sokolyanskyi',
+    brief: 'The largest cargo airplane was destroyed within the first days of russian invasion of Ukraine. It' +
+      ' existed in a single example. This project is a tribute to the beautiful and majestic piece of' +
+      ' machinery. Printed in an edition of 225 pcs. All of the profit was donated to the volunteers, which help Ukrainian armed forces. Case study photogrpahy: Ivan Sokolyanskyi',
     media: [
       '1.webp',
       '2.webp',

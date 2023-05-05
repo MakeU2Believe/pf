@@ -1,25 +1,26 @@
 @import "../../styles/common";
 
 .initials {
-  @include rublena();
   position: relative;
   grid-row-start: 1;
-  grid-column-start: 4;
-  justify-self: end;
-  display: flex;
+  grid-column-start: 2;
   mix-blend-mode: difference;
   color: $color-light-background;
-  line-height: 2;
   z-index: $layer-interactive;
-  @include letter-spacing(0.08em);
-  font-size: 48px;
-  margin-left: auto;
   text-decoration: none;
+  @include h2();
+  margin-left: -0.02em;
 
   @include phone() {
-    font-size: 48px;
+    font-size: 22vw;
     position: fixed;
-    right: 12px;
-    line-height: 1.1;
+    left: 12px;
+    top: 0;
+    line-height: 0.7;
   }
+
+  @include tablet() {
+    font-size: 13.6vw;
+  }
+
 }

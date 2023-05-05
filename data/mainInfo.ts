@@ -1,3 +1,3 @@
 export const mainInfo = {
-  subtitle: 'art director, visual designer, tutor, car lover.'
+  subtitle: ['art director', 'visual designer', 'car lover'],
 }

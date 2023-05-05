@@ -2,19 +2,12 @@ import React from 'react';
 
 import s from './Header.module.scss';
 import classNames from 'classnames';
-import NextLink from 'next/link';
-import {mainInfo} from '../../data';
 import {isMobile} from '../isMobile';
 import {throttle} from 'throttle-debounce';
 import {Initials} from '../Initials';
 
 export type HeaderProps = {
-  link?: {
-    href: string,
-    text: string,
-    mobileText: string,
-  };
-  inContent?: true;
+  dummyHeader?: true;
   hideMobile?: true;
   showInitials?: true;
 }
@@ -43,30 +36,15 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
   }
 
   render() {
-    const {link, inContent, hideMobile, showInitials} = this.props;
+    const {dummyHeader, hideMobile, showInitials} = this.props;
 
     return (<>
-        <h2 className={classNames(s.name, {[s.inContent]: inContent, [s.hideMobile]: hideMobile})}>nick</h2>
-        <h2 className={classNames(s.surname, {[s.inContent]: inContent, [s.hideMobile]: hideMobile})}>deineko</h2>
-
-        {
-          link && (
-            <NextLink
-              href={link.href}
-              className={classNames(s.toggle, {
-                [s.inContent]: inContent,
-                [s.hideMobile]: hideMobile,
-              })}
-              data-title={link.mobileText}>
-              &nbsp;{link.text}&nbsp;
-            </NextLink>
-          )
-        }
-
-        <h3 id="subtitle" className={classNames(s.subtitle, {
-          [s.inContent]: inContent,
-          [s.hideMobile]: hideMobile,
-        })}>{mainInfo.subtitle}</h3>
+        <h2 className={classNames(s.name, {[s.dummyHeader]: dummyHeader, [s.hideMobile]: hideMobile})}>
+          Nick
+        </h2>
+        <h2 id="surname" className={classNames(s.surname, {[s.dummyHeader]: dummyHeader, [s.hideMobile]: hideMobile})}>
+          Deineko
+        </h2>
 
         {
           showInitials && (

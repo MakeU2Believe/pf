@@ -12,18 +12,16 @@ export interface ResumeProps {
 
 export class Resume extends React.Component<ResumeProps> {
   render() {
-    const linkProps = {href: '/', text: 'portfolio', mobileText: 'pf'};
-
     return (
       <>
         <Layout>
-          <Header link={linkProps} />
+          <Header />
 
           <Footer />
         </Layout>
 
         <ScrollableContent>
-          <Header link={linkProps} inContent={true} showInitials={true}/>
+          <Header showInitials={true}/>
 
           <div className={s.content}>
             <Label>career</Label>

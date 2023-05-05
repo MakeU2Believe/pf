@@ -1,5 +1,20 @@
 @import "../../styles/common";
 
+.subtitle {
+  grid-column-start: 2;
+  grid-row-start: 2;
+  @include h3();
+  justify-self: flex-start;
+  margin-top: 2.5vw;
+
+  @include tablet() {
+    margin-left: 0;
+  }
+
+  @include phone() {
+  }
+}
+
 .thumbContainer {
   background: #fff;
   transition: all 0.7s cubic-bezier(0.65, 0.2, 0.2, 0.97),
@@ -11,11 +26,16 @@
 
     .thumbnail {
       filter: none;
+
+      @include notPhone() {
+        transform: scale(1.08); // scale effect on hover
+      }
     }
   }
 
   @include phone() {
-    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
     padding-bottom: 44px;
   }
 
@@ -26,6 +46,7 @@
       display: none;
     }
   }
+
 }
 
 .thumbLink {
@@ -33,35 +54,47 @@
 
   @include notPhone() {
     display: block;
-    padding: 3px 0;
+    padding: 7px 7px; // gap between items
   }
+
+  @include desktopSmall() {
+    display: block;
+    padding: 5px 5px;
+  }
+  
 }
 
 $thumbnailAspectRatio: 3 / 2;
 
 .thumbnail {
-  $width: 232px;
-  width: $width;
-  height: $width * $thumbnailAspectRatio;
+  height: calc(var(--width) * $thumbnailAspectRatio);
   margin: 0 auto;
   filter: grayscale(1);
   transition-property: all;
   transition-duration: 300ms;
-  transition-timing-function:  ease-in-out;
+  transition-timing-function: ease-in-out;
   mix-blend-mode: difference;
   position: relative;
   object-fit: cover;
 
-  @include desktopSmall() {
-    $width: 17.5vw;
-    width: $width;
-    height: $width * $thumbnailAspectRatio;
+  @include phone() {
+    --width: 237px;
   }
 
   @include tablet() {
-    $width: 17.5vw;
-    width: $width;
-    height: $width * $thumbnailAspectRatio;
+    --width: 150px;
+  }
+
+  @include desktopSmall() {
+    --width: 150px;
+  }
+
+  @include desktop() {
+    --width: 150px;
+  }
+
+  @include desktopLarge() {
+    --width: 165px;
   }
 }
 
@@ -89,7 +122,8 @@ $thumbnailAspectRatio: 3 / 2;
 
 .projects {
   grid-column-start: 4;
-  grid-row-start: 3;
+  grid-row-start: 2;
+  justify-self: center;
   list-style: none;
   margin: 0;
   padding-left: 0;
@@ -117,7 +151,7 @@ $thumbnailAspectRatio: 3 / 2;
 
 .projectDetailsContainer {
   @include notPhone() {
-    grid-column-start: 2;
+    grid-column-start: 4;
     grid-row: 2 / 5;
     justify-self: stretch;
     position: relative;
@@ -125,6 +159,7 @@ $thumbnailAspectRatio: 3 / 2;
 
     .projectDetails {
       position: absolute;
+      text-align: left;
       left: 0;
       right: 0;
       top: 50%;
@@ -149,29 +184,48 @@ $thumbnailAspectRatio: 3 / 2;
     }
   }
 
+  @include desktopSmall() {
+    grid-column-start: 2;
+  }
+
+  @include tablet() {
+    grid-column: 2;
+  }
+
   @include phone() {
     display: none;
   }
 }
 
-.projectDetails {
-  text-align: center;
-}
-
 .projectTitle {
-  @include h3();
+  @include h4();
   margin-bottom: 6px;
   margin-top: 12px;
   overflow: hidden;
+
+  @include desktop() {
+    font-size: 16px;
+  }
+
+  @include desktopSmall() {
+    font-size: 16px;
+  }
+
+  @include tablet() {
+    font-size: 16px;
+  }
+
+  @include phone() {
+    font-size: 16px;
+  }
 }
 
 .projectDescription {
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.5;
   overflow: hidden;
 
   @include phone() {
-    margin-top: 0px;
-    line-height: 1.4;
+    display: none;
   }
 }

@@ -8,43 +8,61 @@
 
 .content {
   @include notPhone() {
-    --row-1-height: 152px;
-    --row-2-height: 30px;
+    --row-1-height: min-content;
+    --row-2-height: min-content;
     --row-3-height: min-content;
     --row-4-height: 1fr;
   }
 
   @include phone() {
-    padding-top: 101px;
+    padding-top: 60px;
   }
 }
 
 .label {
-  font-size: 14px;
-  @include letter-spacing(0.1em);
-  grid-column-start: 4;
+  font-size: 18px;
+  @include letter-spacing(0.03em);
+  padding-top: 87px;
+  padding-bottom: 12px;
+  grid-column-start: 2;
   grid-row-start: 2;
-  margin-left: auto;
+
+  @include phone() {
+    padding-top: 48px;
+    padding-bottom: 4px;
+  }
+
+  @include tablet() {
+    padding-top: 64px;
+    padding-bottom: 6px;
+  }
 }
 
 .projectDetails {
   font-size: 16px;
   line-height: 1.8;
   grid-column-start: 2;
-  text-align: center;
 
   @include phone() {
-    text-align: right;
     line-height: 1.4;
+  }
+
+  @include tablet() {
+    line-height: 1.6;
   }
 }
 
 .projectBrief {
+  text-align: left;
   grid-column-start: 4;
-  text-align: center;
+  max-width: 970px;
 
   @include phone() {
-    padding: 26px 8px;
+    padding: 22px 0;
+    line-height: 1.6;
+  }
+
+  @include tablet() {
     line-height: 1.6;
   }
 }
@@ -61,7 +79,7 @@
   grid-row-start: 4;
 
   @include phone() {
-    padding: 32px 0 186px;
+    padding: 0 0 186px;
   }
 
   @include tablet() {
@@ -129,8 +147,12 @@
 }
 
 .nextProjectTitle {
-  grid-column-start: 2;
+  grid-column-start: 4;
   font-size: 16px;
+
+  @include tablet() {
+    grid-column-start: 2;
+  }
 
   @include phone() {
     display: none;
