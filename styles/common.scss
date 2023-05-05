@@ -69,8 +69,9 @@ $breakpoint-desktop-l: 1920px;
   margin-left: -0.02em;
 
   @include phone() {
-    font-size: 22vw;
+    font-size: 24.9vw;
     line-height: 0.9;
+    margin-top: -9px;
   }
 
   @include tablet() {
